@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>MMSE</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>MMSE</title>
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-    <%= yield %>
-  </body>
+<body>
+  <% if current_practitioner  %>
+  Signed in as <%= current_practitioner.identification %> | <%= link_to "Logout", '/logout' %>
+  <% else %>
+  <%= link_to 'Login', '/login' %> | <%= link_to 'Create Account', '/signup' %>
+  <% end %>
+
+  <%= yield %>
+</body>
 </html>

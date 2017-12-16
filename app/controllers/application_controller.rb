@@ -7,4 +7,8 @@ class ApplicationController < ActionController::Base
     return unless session[:practitioner_id]
     @current_practitioner ||= Practitioner.find(session[:practitioner_id])
   end
+
+  def authorize
+    redirect_to '/login' unless @current_practitioner
+  end
 end
