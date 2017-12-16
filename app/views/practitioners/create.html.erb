@@ -1,0 +1,26 @@
+<h1>Create Account</h1>
+<%= form_for @practitioner do |f| %>
+<p>
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name %>
+</p>
+<p>
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name %>
+</p>
+<p>
+  <%= f.label :identification %>
+  <%= f.text_field :identification %>
+</p>
+<p>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+</p>
+<p>
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation %>
+</p>
+<p>
+  <%= f.submit "Save" %>
+</p>
+<% end %>

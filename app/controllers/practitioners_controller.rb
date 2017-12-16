@@ -7,12 +7,23 @@ class PractitionersController < ApplicationController
 
   end
 
-  def new
+  def edit
 
   end
 
-  def create
+  def new
+    @practitioner = Practitioner.new
+  end
 
+  def create
+    @practitioner = Practitioner.new(params[:practitioner])
+    if @practitioner.save
+      redirect_to @practitioner
+    else
+      # This line overrides the default rendering behavior, which
+      # would have been to render the "create" view.
+      render :action => "new"
+    end
   end
 
   def destroy
