@@ -1,12 +1,10 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
-=======
+  root 'practitioners#index'
+
   resources :practitioners
 
-  resources :questions 
+  resources :questions
 
->>>>>>> 17ce330e9a18ae76714e85a453dc0093fe508126
-  root 'practitioners#index'
 
   resources :practitioners do
     collection do
