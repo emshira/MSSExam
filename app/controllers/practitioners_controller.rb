@@ -15,19 +15,34 @@ class PractitionersController < ApplicationController
     @practitioner = Practitioner.new
   end
 
-  def create
-    @practitioner = Practitioner.new(params[:practitioner])
-    if @practitioner.save
-      redirect_to @practitioner
+  def login
+    @practitioner = Practitioner.find_by_identification(practitioner_params[:identification])
+    byebug
+    if !!@practitioner # and @identification.authenticate(practitioner_params[:password])
+      session[:practitioner_id] = @practitioner.id
+      # redirect_to practioners_path
     else
-      # This line overrides the default rendering behavior, which
-      # would have been to render the "create" view.
-      render :action => "new"
+      render :action => "practitioner_landing"
+    end
+  end
+
+  def create
+    @practitioner = Practitioner.new(practitioner_params)
+    if @practitioner.save
+      session[:practitioner_id] = @practitioner.id
+      redirect_to practioners_path
+    else
+      render :new
     end
   end
 
   def destroy
 
   end
+
+  private
+    def practitioner_params
+      params.require(:practitioner).permit(:identification, :last_name, :first_name, :password, :password_confirmation)
+    end
 
 end

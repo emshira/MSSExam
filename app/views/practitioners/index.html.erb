@@ -1,18 +1,22 @@
-<h1>MiniMed Exam</h1>
+<% if !!current_practitioner %>
+ DASHBOARD GOES HERE
+<% else %>
+  <h1>MiniMental Exam</h1>
 
-<h3>Practitioner Log in</h3>
-<%= form_tag practitioners_path do %>
-<p>
-  <%= label_tag :identification %>
-  <%= text_field_tag :identification %>
-</p>
-<p>
-  <%= label_tag :password %>
-  <%= password_field_tag :password %>
-</p>
-<p>
-  <%= submit_tag "Log in" %>
-</p>
+  <h3>Practitioner Log in</h3>
+  <%= form_tag login_practitioners_path do %>
+  <p>
+    <%= label_tag "practitioner[identification]" %>
+    <%= text_field_tag "practitioner[identification]" %>
+  </p>
+  <p>
+    <%= label_tag "practitioner[password]" %>
+    <%= password_field_tag "practitioner[password]" %>
+  </p>
+  <p>
+    <%= submit_tag "Log in" %>
+  </p>
+  <% end %>
+
+  <%# link_to 'Create Practitioner Account', practioners_create_path %>
 <% end %>
-
-<%= link_to 'New Practitioner', new_practitioner_path %>
