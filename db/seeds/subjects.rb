@@ -11,14 +11,8 @@ SUBJECTS = [
   {title: "Language - Follow complex command"},
   {title: "Language - Follow command 1"},
   {title: "Language - Follow command 2"},
-  {title: "Language - Follow complex command"},
   {title: "Language - Follow command and Copy"},
 ]
-
-
-
-
-
 
 
 SUBJECTS.each do |subject|
