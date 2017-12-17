@@ -1,5 +1,5 @@
 class PractitionersController < ApplicationController
-  before_action :authorize
+  before_action :authorize, except: [:new, :create]
 
   def index
     @practioners = Practitioner.all
@@ -21,9 +21,9 @@ class PractitionersController < ApplicationController
     @practitioner = Practitioner.new(practitioner_params)
     if @practitioner.save
       session[:practitioner_id] = @practitioner.id
-      redirect_to '/'
-    else
       redirect_to '/signup'
+    else
+      redirect_to practitioners_path
     end
   end
 

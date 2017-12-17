@@ -4,7 +4,7 @@
   <title>MMSE</title>
   <%= csrf_meta_tags %>
 
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 
@@ -12,7 +12,7 @@
   <% if current_practitioner  %>
   Signed in as <%= current_practitioner.identification %> | <%= link_to "Logout", '/logout' %>
   <% else %>
-  <%= link_to 'Login', '/login' %> | <%= link_to 'Create Account', '/signup' %>
+  <%= link_to 'Login', '/login' %> | <%= link_to 'Create Account', new_practitioner_path %>
   <% end %>
 
   <%= yield %>

@@ -1,8 +1,11 @@
 <% if !!current_practitioner %>
-DASHBOARD GOES HERE
-<% else %>
-<h1>MiniMental Exam</h1>
 
+<h1>DASHBOARD GOES HERE</h1>
+
+<% else %>
+<h1 class="title-login">MiniMental Exam</h1>
+<br>
+<br>
 <h3>Practitioner Log in</h3>
 <%= form_tag '/login' do %>
 <p>
