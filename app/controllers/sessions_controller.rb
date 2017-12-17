@@ -16,6 +16,6 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:practitioner_id] = nil
-    redirect_to '/login'
+    redirect_to '/landing'
   end
 end

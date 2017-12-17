@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
 
+  get '/landing' => 'practitioners#landing'
   get '/signup' => 'practitioners#new'
   post '/create' => 'practitioners#create'
 
