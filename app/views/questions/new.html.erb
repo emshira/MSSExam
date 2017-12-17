@@ -9,27 +9,29 @@
     <% elsif question.subject.id == Subject::LAN_NAME.id %>
       <% range = 0..2 %>
     <% elsif question.subject.id == Subject::LAN_CMD_TWO.id %>
-      <% range = -0..1 %>
+      <% range = 0..1 %>
     <% else %>
       <% range = 1..5 %>
     <% end %>
 
-    <% if [Subject::LAN_CMD_ONE.id, Subject::LAN_CMD_TWO.id, Subject::LAN_COPY.id].include?(question.subject.id) %>
+
+
+    <% if [Subject::LAN_CMD_TWO.id, Subject::LAN_COPY.id].include?(question.subject.id) %>
       <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal<%= question.id %>">
-       Launch demo modal
+       Launch modal
       </button>
       <!-- Modal -->
       <div class="modal fade" id="myModal<%= question.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
        <div class="modal-dialog" role="document">
          <div class="modal-content">
            <div class="modal-header">
-             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+             <button type="button" class="close" data-dismiss="modal" aria-label="close"><span aria-hidden="true">&times;</span></button>
              <h4 class="modal-title" id="myModalLabel"><%= question.question %></h4>
            </div>
            <div class="modal-body">
              <div class="col-xs-12">
                 <h2>Draw Something:</h2>
-               <canvas width="450" height="500" id="canvas" style="background: black;"></canvas>
+               <canvas width="500" height="700" id="canvas" style="background: white;"></canvas>
                 <ul>
                   <li> <input type="range" id="marker" max="10" min="1" value-"1"></li>
                   <li><button class="button" id="clear">Clear Scetchbook</button></li>
