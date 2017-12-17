@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   resources :practitioners
 
-  resources :questions 
+  resources :questions
+
+  resources :canvas_question_as
 
   root 'practitioners#index'
 
