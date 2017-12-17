@@ -1,0 +1,67 @@
+<%= form_with(model: pt, local: true) do |form| %>
+  <% if pt.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(pt.errors.count, "error") %> prohibited this pt from being saved:</h2>
+
+      <ul>
+      <% pt.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name, id: :pt_first_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name, id: :pt_last_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date_of_birth %>
+    <%= form.number_field :date_of_birth, id: :pt_date_of_birth %>
+  </div>
+
+  <div class="field">
+    <%= form.label :gender %>
+    <%= form.text_field :gender, id: :pt_gender %>
+  </div>
+
+  <div class="field">
+    <%= form.label :reason_for_visit %>
+    <%= form.text_area :reason_for_visit, id: :pt_reason_for_visit %>
+  </div>
+
+  <div class="field">
+    <%= form.label :insurance %>
+    <%= form.text_field :insurance, id: :pt_insurance %>
+  </div>
+
+  <div class="field">
+    <%= form.label :policy_number %>
+    <%= form.text_field :policy_number, id: :pt_policy_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :telephone %>
+    <%= form.number_field :telephone, id: :pt_telephone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_field :address, id: :pt_address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email, id: :pt_email %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
