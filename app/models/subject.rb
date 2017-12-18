@@ -1,4 +1,6 @@
 class Subject < ApplicationRecord
+  belongs_to :practitioners
+
   has_many :questions
   TEMP_TIME    = self.find_by_title('Temporal Orientation to time')
   SPA_PLACE    = self.find_by_title('Spatial Orientation to place')
