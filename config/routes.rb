@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   resources :questions
 
   resources :canvas_question_as
+<<<<<<< HEAD
+=======
+
+>>>>>>> edb70cd1829c6fa899093d969cd20dd464d30425
 
   root 'practitioners#index'
 
