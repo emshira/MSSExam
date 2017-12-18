@@ -10,8 +10,14 @@ Things you may want to cover:
 * System dependencies
 
 * Configuration
+-------------------------
 
-* Database creation
+### Database creation:
+#### To update the Database please do the following:
+- rake db:migrate
+- rake db:questions_seed
+- rake db:subjects_seed
+-------------------------
 
 * Database initialization
 

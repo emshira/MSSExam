@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @pt.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @pt.last_name %>
+</p>
+
+<p>
+  <strong>Date of birth:</strong>
+  <%= @pt.date_of_birth %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @pt.gender %>
+</p>
+
+<p>
+  <strong>Reason for visit:</strong>
+  <%= @pt.reason_for_visit %>
+</p>
+
+<p>
+  <strong>Insurance:</strong>
+  <%= @pt.insurance %>
+</p>
+
+<p>
+  <strong>Policy number:</strong>
+  <%= @pt.policy_number %>
+</p>
+
+<p>
+  <strong>Telephone:</strong>
+  <%= @pt.telephone %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @pt.address %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @pt.email %>
+</p>
+
+<%= link_to 'Edit', edit_pt_path(@pt) %> |
+<%= link_to 'Back', pts_path %>

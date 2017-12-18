@@ -13,6 +13,7 @@
     <% else %>
       <% range = 1..5 %>
     <% end %>
+
     <% if [Subject::LAN_CMD_TWO.id, Subject::LAN_COPY.id].include?(question.subject.id) %>
       <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal<%= question.id %>">
        Launch modal
@@ -33,6 +34,7 @@
                   <li> <input type="range" id="marker" max="10" min="1" value-"1"></li>
                   <li><button class="button" id="clear">Clear Scetchbook</button></li>
                 </ul>
+
                 </div><!--end container-->
            </div>
            <div class="modal-footer">
@@ -44,6 +46,7 @@
       </div>
      <% end %>
     <%= select_tag "question[]", options_for_select((range).step(1) {|s| ["#{s}%", s]}), data: { question_id: question.id}%>
+
     <br>
   <% end %>
 <hr>
