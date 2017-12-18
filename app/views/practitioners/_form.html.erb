@@ -1,0 +1,42 @@
+<%= form_with(model: practitioner, local: true) do |f| %>
+<% if practitioner.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(practitioner.errors.count, "error") %> prohibited this practitioner from being saved:</h2>
+
+  <ul>
+    <% practitioner.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<div class="field">
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name %>
+</div>
+
+<div class="field">
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name %>
+</div>
+
+<div class="field">
+  <%= f.label :identification %>
+  <%= f.text_field :identification %>
+</div>
+
+<div class="field">
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+</div>
+
+<div class="field">
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation %>
+</div>
+
+<div class="actions">
+  <%= f.submit "Save" %>
+</div>
+<% end %>

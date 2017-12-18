@@ -1,0 +1,31 @@
+<% if !!current_practitioner %>
+
+<h1>Mini Mental State Exam</h1>
+
+<p>Select Patient</p>
+
+
+
+<p>Create New Patient</p>
+
+<% else %>
+<h1 class="title-login">Mini Mental State Exam</h1>
+<br>
+<br>
+<h3>Practitioner Log in</h3>
+<%= form_tag '/login' do %>
+<p>
+  <%= label_tag "Practitioner Identification" %>
+  <%= text_field_tag "practitioner[identification]" %>
+</p>
+<p>
+  <%= label_tag "Practitioner Password" %>
+  <%= password_field_tag "practitioner[password]" %>
+</p>
+<p>
+  <%= submit_tag "Log in" %>
+
+</p>
+<% end %>
+
+<% end %>
