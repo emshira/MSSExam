@@ -1,0 +1,2 @@
+module CanvasQuestionAHelper
+end

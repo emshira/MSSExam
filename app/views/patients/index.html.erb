@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Pts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Date of birth</th>
+      <th>Gender</th>
+      <th>Reason for visit</th>
+      <th>Insurance</th>
+      <th>Policy number</th>
+      <th>Telephone</th>
+      <th>Address</th>
+      <th>Email</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pts.each do |pt| %>
+      <tr>
+        <td><%= pt.first_name %></td>
+        <td><%= pt.last_name %></td>
+        <td><%= pt.date_of_birth %></td>
+        <td><%= pt.gender %></td>
+        <td><%= pt.reason_for_visit %></td>
+        <td><%= pt.insurance %></td>
+        <td><%= pt.policy_number %></td>
+        <td><%= pt.telephone %></td>
+        <td><%= pt.address %></td>
+        <td><%= pt.email %></td>
+        <td><%= link_to 'Show', pt %></td>
+        <td><%= link_to 'Edit', edit_pt_path(pt) %></td>
+        <td><%= link_to 'Destroy', pt, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pt', new_pt_path %>
