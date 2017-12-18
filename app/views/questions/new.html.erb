@@ -15,6 +15,9 @@
     <% end %>
 
 
+<% if [Subject::LAN_CMD_ONE.id].include?(question.subject.id) %>
+
+
 
     <% if [Subject::LAN_CMD_TWO.id, Subject::LAN_COPY.id].include?(question.subject.id) %>
       <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal<%= question.id %>">
@@ -31,7 +34,7 @@
            <div class="modal-body">
              <div class="col-xs-12">
                 <h2>Draw Something:</h2>
-               <canvas width="500" height="700" id="canvas" style="background: white;"></canvas>
+               <canvas width="500" height="700" id="canvas" style="background: white";></canvas>
                 <ul>
                   <li> <input type="range" id="marker" max="10" min="1" value-"1"></li>
                   <li><button class="button" id="clear">Clear Scetchbook</button></li>
@@ -53,6 +56,6 @@
     <br>
   <% end %>
 <hr>
-<%end %>
+<% end %>
 
 <%= link_to "Next Question", new_canvas_question_a_path %>
