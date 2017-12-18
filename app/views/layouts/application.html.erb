@@ -20,7 +20,9 @@
 </head>
 
 <body>
-
+  <p class="home-link">
+    <%= link_to 'Home', practitioners_path %>
+  </p>
   <% if current_practitioner  %>
   Signed in as <%= current_practitioner.identification %> | <%= link_to "Logout", '/logout' %>
   <% else %>
