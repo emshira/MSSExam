@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       session[:practitioner_id] = @practitioner.id
       redirect_to '/login'
     else
-      redirect_to new_practitioners_path
+      redirect_to new_practitioner_path
     end
   end
 
