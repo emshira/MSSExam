@@ -4,7 +4,7 @@
 
 <table>
   <thead>
-    <tr>
+    <!-- <tr>
       <th>First name</th>
       <th>Last name</th>
       <th>Date of birth</th>
@@ -17,10 +17,14 @@
       <th>Email</th>
       <th colspan="3"></th>
     </tr>
-  </thead>
+  </thead> -->
 
   <tbody>
+<<<<<<< HEAD
+    <% @patients.each do |pt| %>
+=======
     <% @patients.each do |patient| %>
+>>>>>>> 79187fdb49de356cd602bc4735a8c61be88e6d89
       <tr>
         <td><%= patient.first_name %></td>
         <td><%= patient.last_name %></td>
