@@ -1,3 +1,15 @@
+patient = Patient.create(
+	first_name: Faker::Name.unique.first_name,
+	last_name: Faker::Name.unique.last_name,
+)
+practitioner = Practitioner.find_or_create_by!(
+	first_name: Faker::Name.unique.first_name,
+	last_name: Faker::Name.unique.last_name,
+	identification: Faker::Number.number(5),
+	patient_id: patient,
+)
+p practitioner
+
 p "Seeding subjects"
 
 SUBJECTS = [
@@ -16,7 +28,8 @@ SUBJECTS = [
 
 
 SUBJECTS.each do |subject|
-  Subject.find_or_create_by(title: subject[:title])
+  subject = Subject.create(title: subject[:title])
+  p subject
 end
 
 
