@@ -29,10 +29,10 @@
            <div class="modal-body">
              <div class="col-xs-12">
                 <h2>Draw Something:</h2>
-               <canvas width="500" height="700" id="canvas" style="background: white;"></canvas>
+               <canvas width="500" height="700" id="canvas" style="background: white";></canvas>
                 <ul>
                   <li> <input type="range" id="marker" max="10" min="1" value-"1"></li>
-                  <li><button class="button" id="clear">Clear Scetchbook</button></li>
+                  <li><button class="clear" id="clear">Clear Scetchbook</button></li>
                 </ul>
 
                 </div><!--end container-->
@@ -50,5 +50,13 @@
     <br>
   <% end %>
 <hr>
+<<<<<<< HEAD
 <%end %>
 <%= link_to "Next Question", new_canvas_question_a_path %>
+=======
+<% end %>
+
+<input class="btn btn-primary" type="submit" value="Submit">
+<br>
+<%= link_to "Next", new_canvas_question_a_path %>
+>>>>>>> exam_model
