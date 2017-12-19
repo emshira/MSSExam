@@ -15,10 +15,6 @@
       <% range = 1..5 %>
     <% end %>
 
-
-
-
-
     <% if [Subject::LAN_CMD_TWO.id, Subject::LAN_COPY.id].include?(question.subject.id) %>
       <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal<%= question.id %>">
        Launch modal

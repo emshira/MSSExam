@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
+  resources :patients
   resources :practitioners
 
   resources :questions 
 
 
   resources :canvas_question_as
+
 
   root 'practitioners#index'
 
