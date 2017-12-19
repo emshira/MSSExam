@@ -1,1 +1,1 @@
-json.partial! "pts/pt", pt: @pt
+json.partial! "patients/patient", patient: @patient
