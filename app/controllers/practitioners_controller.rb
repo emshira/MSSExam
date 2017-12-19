@@ -12,7 +12,7 @@ class PractitionersController < ApplicationController
   end
 
   def create
-
+    
   end
 
   def destroy

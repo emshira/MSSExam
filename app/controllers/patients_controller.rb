@@ -1,6 +1,6 @@
 class PatientsController < ApplicationController
 
   def index
-    redirect_to 'http://example.com'
+    @patients = Patient.all
   end
 end
