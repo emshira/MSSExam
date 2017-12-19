@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  def new 
+  def new
     @questions = Question.all
   end
 end
