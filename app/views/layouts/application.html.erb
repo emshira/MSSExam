@@ -20,17 +20,23 @@
 </head>
 
 <body>
-  <p class="home-link">
-    <%= link_to 'Home', practitioners_path %>
-  </p>
-  <% if current_practitioner  %>
-  Signed in as <%= current_practitioner.identification %> | <%= link_to "Logout", '/logout' %>
-  <% else %>
-  <%= link_to 'Login', '/login' %> | <%= link_to 'Create Account', new_practitioner_path %>
-  <% end %>
+
+  <header>
+    <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+      <div class="nav">
+        <% if current_practitioner  %>
+        Signed in as <%= current_practitioner.identification %> | <%= link_to "Logout", '/logout' %>
+        <% else %>
+        <%= link_to 'Login', '/login' %> | <%= link_to 'Create Account', new_practitioner_path %>
+        <% end %>
+      </div>
+    </nav>
+  </header>
 
   <%= yield %>
-
+  <footer>
+    something
+  </footer>
 </body>
 </head>
 </html>
