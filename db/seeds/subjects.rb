@@ -11,7 +11,6 @@ practitioner = Practitioner.find_or_create_by!(
 p practitioner
 
 p "Seeding subjects"
-
 SUBJECTS = [
   {title: "Temporal Orientation to time"},
   {title: "Spatial Orientation to place"},
@@ -25,12 +24,7 @@ SUBJECTS = [
   {title: "Language - Follow command 2"},
   {title: "Language - Follow command and Copy"},
 ]
-
-
 SUBJECTS.each do |subject|
-  subject = Subject.create(title: subject[:title])
-  p subject
+  Subject.find_or_create_by!(title: subject[:title])
 end
-
-
 p "Created #{Subject.count} subjects"

@@ -1,5 +1,8 @@
 class Subject < ApplicationRecord
+  belongs_to :practitioners, optional: true
+
   has_many :questions
+
   TEMP_TIME    = self.find_by_title('Temporal Orientation to time')
   SPA_PLACE    = self.find_by_title('Spatial Orientation to place')
   REG          = self.find_by_title('Registration')
@@ -11,4 +14,5 @@ class Subject < ApplicationRecord
   LAN_CMD_ONE  = self.find_by_title('Language - Follow command 1')
   LAN_CMD_TWO  = self.find_by_title('Language - Follow command 2')
   LAN_COPY     = self.find_by_title('Language - Follow command and Copy')
+
 end

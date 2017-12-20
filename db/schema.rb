@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171217160248) do
+ActiveRecord::Schema.define(version: 20171219001828) do
 
   create_table "canvas_question_as", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -23,11 +23,11 @@ ActiveRecord::Schema.define(version: 20171217160248) do
   end
 
   create_table "patients", force: :cascade do |t|
-    t.string "last_name"
     t.string "first_name"
-    t.string "date_of_birth"
+    t.string "last_name"
+    t.integer "date_of_birth"
     t.string "gender"
-    t.string "reason_for_visit"
+    t.text "reason_for_visit"
     t.string "insurance"
     t.string "policy_number"
     t.integer "telephone"
@@ -35,8 +35,8 @@ ActiveRecord::Schema.define(version: 20171217160248) do
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "patient_id"
-    t.index ["patient_id"], name: "index_patients_on_patient_id"
+    t.integer "practitioner_id"
+    t.index ["practitioner_id"], name: "index_patients_on_practitioner_id"
   end
 
   create_table "practitioners", force: :cascade do |t|
@@ -46,7 +46,12 @@ ActiveRecord::Schema.define(version: 20171217160248) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "patient_id"
+    t.string "patient"
+    t.integer "practitioner_id"
     t.index ["identification"], name: "index_practitioners_on_identification", unique: true
+    t.index ["patient_id"], name: "index_practitioners_on_patient_id"
+    t.index ["practitioner_id"], name: "index_practitioners_on_practitioner_id"
   end
 
   create_table "question_answers", force: :cascade do |t|

@@ -1,4 +1,6 @@
 class Practitioner < ApplicationRecord
-  belongs_to :patient
+  has_secure_password
+
+  # belongs_to :patient
   has_many :patients
 end

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+rails db:drop
+rails db:migrate
+rails db:subjects_seed
+rails db:questions_seed

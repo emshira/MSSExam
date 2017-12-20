@@ -1,14 +1,18 @@
 Rails.application.routes.draw do
-  resources :practitioners
-  resources :patients
+ root 'practitioners#index'
+ resources :patients
+ resources :practitioners
+ resources :questions
+ resources :canvas_question_as
+ resources :canvas_question_bs
 
-  resources :questions
+ get '/login' => 'sessions#new'
+ post '/login' => 'sessions#create'
+ get '/logout' => 'sessions#destroy'
 
-  resources :canvas_question_as
+ get '/landing' => 'practitioners#landing'
+ get '/signup' => 'practitioners#new'
+ post '/create' => 'practitioners#create'
 
-  resources :canvas_question_bs
-
-  root 'practitioners#index'
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+ # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
