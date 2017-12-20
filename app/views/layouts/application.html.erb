@@ -29,13 +29,24 @@
 </head>
   <body>
 
-    <% if current_practitioner  %>
-    Signed in as <%= current_practitioner.identification %> | <%= link_to "Logout", '/logout' %>
-    <% else %>
-    <%= link_to 'Login', '/login' %> | <%= link_to 'Create Account', new_practitioner_path %>
-    <% end %>
+<body>
 
-    <%= yield %>
+  <header>
+    <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+      <div class="nav">
+        <% if current_practitioner  %>
+        Signed in as <%= current_practitioner.identification %> | <%= link_to "Logout", '/logout' %>
+        <% else %>
+        <%= link_to 'Login', '/login' %> | <%= link_to 'Create Account', new_practitioner_path %>
+        <% end %>
+      </div>
+    </nav>
+  </header>
 
-  </body>
+  <%= yield %>
+  <footer>
+    something
+  </footer>
+</body>
+</head>
 </html>
