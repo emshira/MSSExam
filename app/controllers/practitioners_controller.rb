@@ -21,9 +21,9 @@ class PractitionersController < ApplicationController
     @practitioner = Practitioner.new(practitioner_params)
     if @practitioner.save
       session[:practitioner_id] = @practitioner.id
-      redirect_to '/signup'
+      redirect_to patients_path
     else
-      redirect_to practitioners_path
+      redirect_to new_practitioners_path
     end
   end
 
@@ -33,7 +33,7 @@ class PractitionersController < ApplicationController
 
   private
     def practitioner_params
-      params.require(:practitioner).permit(:identification, :last_name, :first_name, :password, :password_confirmation)
+      params.require(:practitioner).permit(:identification, :last_name, :first_name, :email, :password, :password_confirmation)
     end
 
 end

@@ -3,13 +3,13 @@
 <h1>Mini Mental State Exam</h1>
 
 <p>
-<%= link_to 'Select Patient', patients_path %>
+  <%= link_to 'Select Patient', patients_path %>
 </p>
 
 <%= @testing %>
 
 <p>
-<%= link_to 'Create New Patient', new_patient_path %>
+  <%= link_to 'Create New Patient', new_patient_path %>
 </p>
 
 <% else %>
@@ -19,8 +19,8 @@
 <h3>Practitioner Log in</h3>
 <%= form_tag '/login' do %>
 <p>
-  <%= label_tag "Practitioner Identification" %>
-  <%= text_field_tag "practitioner[identification]" %>
+  <%= label_tag "Practitioner Email" %>
+  <%= text_field_tag "practitioner[email]" %>
 </p>
 <p>
   <%= label_tag "Practitioner Password" %>
@@ -28,7 +28,7 @@
 </p>
 <p>
   <%= submit_tag "Log in" %>
-
+  <p><%= link_to 'Forgot password', new_password_reset_path %></p>
 </p>
 <% end %>
 
