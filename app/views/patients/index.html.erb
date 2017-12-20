@@ -20,11 +20,9 @@
   </thead> -->
 
   <tbody>
-<<<<<<< HEAD
     <% @patients.each do |pt| %>
-=======
+
     <% @patients.each do |patient| %>
->>>>>>> 79187fdb49de356cd602bc4735a8c61be88e6d89
       <tr>
         <td><%= patient.first_name %></td>
         <td><%= patient.last_name %></td>
@@ -47,3 +45,4 @@
 <br>
 
 <%= link_to 'New Patient', new_patient_path %>
+<% end %>
