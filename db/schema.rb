@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171217160248) do
+ActiveRecord::Schema.define(version: 20171219001828) do
 
   create_table "canvas_question_as", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -35,6 +35,8 @@ ActiveRecord::Schema.define(version: 20171217160248) do
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "practitioner_id"
+    t.index ["practitioner_id"], name: "index_patients_on_practitioner_id"
   end
 
   create_table "practitioners", force: :cascade do |t|
@@ -45,8 +47,11 @@ ActiveRecord::Schema.define(version: 20171217160248) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "patient_id"
+    t.string "patient"
+    t.integer "practitioner_id"
     t.index ["identification"], name: "index_practitioners_on_identification", unique: true
     t.index ["patient_id"], name: "index_practitioners_on_patient_id"
+    t.index ["practitioner_id"], name: "index_practitioners_on_practitioner_id"
   end
 
   create_table "question_answers", force: :cascade do |t|
