@@ -1,0 +1,7 @@
+
+patients = 10.times.map do
+	Patient.find_or_create_by(
+		first_name: Faker::Name.unique.first_name,
+		last_name: Faker::Name.unique.last_name,
+)
+end

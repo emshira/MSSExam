@@ -1,24 +1,24 @@
 p "Seeding canvas questions"
 
 CANVASQUESTIONSA = [
-  {intro: "", question: "Please read and obey the following commands. CLOSE YOUR EYES", subject_id: Subject::LAN_CMD_ONE .id},
+  {intro: "", question: "Please read and obey the following commands. CLOSE YOUR EYES", subject: Subject.lan_cmd_one},
 
-  {intro: "", question: "Please write a sentence. Write a sentence", subject_id: Subject::LAN_CMD_TWO.id},
+  {intro: "", question: "Please write a sentence. Write a sentence", subject: Subject.lan_cmd_two},
 ]
 
 
 CANVASQUESTIONSA.each do |question|
-  Question.find_or_create_by(intro: question[:intro], question: question[:question], subject_id: question[:subject_id])
+  Question.find_or_create_by(intro: question[:intro], question: question[:question], subject: question[:subject])
 end
 
 
 
 CANVASQUESTIONSB = [
-  {intro: "", question: "Please copy the following drawing", subject_id: Subject::LAN_COPY.id},
+  {intro: "", question: "Please copy the following drawing", subject: Subject.lan_copy},
 ]
 
 CANVASQUESTIONSB.each do |question|
-  Question.find_or_create_by(intro: question[:intro], question: question[:question], subject_id: question[:subject_id])
+  Question.find_or_create_by(intro: question[:intro], question: question[:question], subject: question[:subject])
 end
 
 p "Created #{CanvasQuestionA.count} canvas questions A"

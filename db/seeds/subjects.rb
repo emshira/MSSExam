@@ -16,7 +16,7 @@ SUBJECTS = [
 
 
 SUBJECTS.each do |subject|
-  Subject.find_or_create_by(title: subject[:title])
+  Subject.find_or_create_by!(title: subject[:title])
 end
 
 
