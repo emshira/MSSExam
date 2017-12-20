@@ -1,25 +1,51 @@
-<% @questions.group_by(&:subject_id).each do |grouped_question |%>
+<% @questions.group_by(&:subject).each do |grouped_question |%>
   <% questions = grouped_question.last %>
     <% questions.each do |question|%>
     <%= question.question %>
-    <% if question.subject.id == Subject::TEMP_TIME.id or question.subject.id == Subject::SPA_PLACE.id or question.subject.id == Subject::LAN_REP.id or question.subject.id == Subject::LAN_CMD_ONE.id or question.subject.id == Subject::LAN_COPY.id %>
+    <% if question.subject == Subject::TEMP_TIME or question.subject == Subject::SPA_PLACE or question.subject == Subject::LAN_REP or question.subject == Subject::LAN_CMD_ONE or question.subject == Subject::LAN_COPY %>
       <% range = 0..1 %>
-    <% elsif question.subject.id == Subject::REG.id or question.subject.id == Subject::REC.id or question.subject.id == Subject::LAN_COMPLEX.id  %>
+    <% elsif question.subject == Subject::REG or question.subject == Subject::REC or question.subject == Subject::LAN_COMPLEX %>
       <% range = 0..3 %>
-    <% elsif question.subject.id == Subject::LAN_NAME.id %>
+    <% elsif question.subject == Subject::LAN_NAME %>
       <% range = 0..2 %>
-    <% elsif question.subject.id == Subject::LAN_CMD_TWO.id %>
+    <% elsif question.subject == Subject::LAN_CMD_TWO %>
       <% range = 0..1 %>
     <% else %>
       <% range = 1..5 %>
     <% end %>
 
-    <% if [Subject::LAN_CMD_TWO.id, Subject::LAN_COPY.id].include?(question.subject.id) %>
-      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal<%= question.id %>">
+
+
+    <% if Subject::LAN_CMD_ONE == question.subject%>
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal<%= question.subject.id %>">Launch</button>
+
+    <div class="modal fade" id="myModal<%= question.subject.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel"><%= question.question %></h4>
+          </div>
+          <div class="modal-body">
+            <h1>Close Your Eyes</h1>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <% end %>
+
+
+    <% if [Subject::LAN_CMD_TWO, Subject::LAN_COPY].include?(question.subject) %>
+      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal<%= question.subject.id %>">
        Launch modal
       </button>
       <!-- Modal -->
-      <div class="modal fade" id="myModal<%= question.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal fade" id="myModal<%= question.subject.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
        <div class="modal-dialog" role="document">
          <div class="modal-content">
            <div class="modal-header">
@@ -29,12 +55,11 @@
            <div class="modal-body">
              <div class="col-xs-12">
                 <h2>Draw Something:</h2>
-               <canvas width="500" height="700" id="canvas" style="background: white;"></canvas>
+               <canvas width="500" height="700" id="canvas" style="background: white";></canvas>
                 <ul>
                   <li> <input type="range" id="marker" max="10" min="1" value-"1"></li>
-                  <li><button class="button" id="clear">Clear Scetchbook</button></li>
+                  <li><button class="clear" id="clear">Clear Scetchbook</button></li>
                 </ul>
-
                 </div><!--end container-->
            </div>
            <div class="modal-footer">
@@ -45,10 +70,11 @@
        </div>
       </div>
      <% end %>
-    <%= select_tag "question[]", options_for_select((range).step(1) {|s| ["#{s}%", s]}), data: { question_id: question.id}%>
-
+    <%= select_tag "question[]", options_for_select((range).step(1) {|s| ["#{s}%", s]}), data: { question: question}%>
     <br>
   <% end %>
 <hr>
-<%end %>
-<%= link_to "Next Question", new_canvas_question_a_path %>
+<% end %>
+<input class="btn btn-primary" type="submit" value="Submit">
+<br>
+<%= link_to "Next", new_canvas_question_a_path %>
