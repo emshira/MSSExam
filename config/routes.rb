@@ -6,12 +6,6 @@ Rails.application.routes.draw do
  resources :canvas_question_as
  resources :canvas_question_bs
 
- # resources :practitioners do
- #   collection do
- #     get :login
- #   end
- # end
-
  get '/login' => 'sessions#new'
  post '/login' => 'sessions#create'
  get '/logout' => 'sessions#destroy'
