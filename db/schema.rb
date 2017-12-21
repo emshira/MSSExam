@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20171221193324) do
+=======
+ActiveRecord::Schema.define(version: 20171220204948) do
+>>>>>>> master
 
   create_table "canvas_question_as", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -57,6 +61,10 @@ ActiveRecord::Schema.define(version: 20171221193324) do
     t.integer "patient_id"
     t.string "patient"
     t.integer "practitioner_id"
+    t.string "password_reset_token"
+    t.datetime "password_reset_sent_at"
+    t.string "practitioner"
+    t.string "email"
     t.index ["identification"], name: "index_practitioners_on_identification", unique: true
     t.index ["patient_id"], name: "index_practitioners_on_patient_id"
     t.index ["practitioner_id"], name: "index_practitioners_on_practitioner_id"
