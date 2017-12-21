@@ -60,39 +60,14 @@ class PatientsController < ApplicationController
     end
   end
 
-  private
-<<<<<<< HEAD
-
-=======
->>>>>>> 8cfd59c92db7d5add9bcf331106ef7855f892b5b
-    # Use callbacks to share common setup or constraints between actions.
-    def set_patient
-      @patient = Patient.find(params[:id])
-    end
-
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def patient_params
-      params.require(:patient).permit(:first_name, :last_name, :date_of_birth, :gender, :reason_for_visit, :insurance, :policy_number, :telephone, :address, :email)
-    end
-<<<<<<< HEAD
-
-=======
->>>>>>> 8cfd59c92db7d5add9bcf331106ef7855f892b5b
   # Use callbacks to share common setup or constraints between actions.
-  # def set_patient
-  #   @patient = Patient.find(params[:id])
-  # end
+  def set_patient
+    @patient = Patient.find(params[:id])
+  end
 
-  # # Never trust parameters from the scary internet, only allow the white list through.
-  # def patient_params
-  #   params.require(:patient).permit(:first_name, :last_name, :date_of_birth, :gender, :reason_for_visit, :insurance, :policy_number, :telephone, :address, :email)
-  # end
-
-<<<<<<< HEAD
-=======
   # Never trust parameters from the scary internet, only allow the white list through.
   def patient_params
     params.require(:patient).permit(:first_name, :last_name, :date_of_birth, :gender, :reason_for_visit, :insurance, :policy_number, :telephone, :address, :email)
   end
->>>>>>> 8cfd59c92db7d5add9bcf331106ef7855f892b5b
+
 end
