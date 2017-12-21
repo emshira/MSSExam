@@ -9,9 +9,8 @@ class PasswordResetsController < ApplicationController
     redirect_to new_session_path
   end
 
-def index
-end
-
+  def index
+  end
 
   def edit
     @practitioner = Practitioner.find_by_password_reset_token!(params[:id])
