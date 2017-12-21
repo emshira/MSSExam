@@ -17,11 +17,10 @@ class PractitionersController < ApplicationController
   end
 
   def landed
-    byebug
-    f = params[:question].first.values.map(&:to_i)
-    p f.reduce(&:+)
+    f = params[:question].map(&:to_i)
+    result = f.reduce(&:+)
+    patient_score = PatientScore.create(total: result)
     render 'landing'
-
   end
 
   def new
