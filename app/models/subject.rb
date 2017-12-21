@@ -14,5 +14,5 @@ class Subject < ApplicationRecord
   LAN_CMD_ONE  = self.find_by_title('Language - Follow command 1')
   LAN_CMD_TWO  = self.find_by_title('Language - Follow command 2')
   LAN_COPY     = self.find_by_title('Language - Follow command and Copy')
-  
+
 end

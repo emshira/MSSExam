@@ -21,5 +21,4 @@ class QuestionsController < ApplicationController
     @questions = Question.all
   end
 
-
 end

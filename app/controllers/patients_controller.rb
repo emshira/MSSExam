@@ -25,7 +25,6 @@ class PatientsController < ApplicationController
   # POST /patients.json
   def create
     @patient = current_practitioner.patients.new(patient_params)
-
     respond_to do |format|
       if @patient.save
         format.html { redirect_to @patient, notice: 'Patient was successfully created.' }
@@ -61,7 +60,6 @@ class PatientsController < ApplicationController
     end
   end
 
-  private
   # Use callbacks to share common setup or constraints between actions.
   def set_patient
     @patient = Patient.find(params[:id])
@@ -71,13 +69,5 @@ class PatientsController < ApplicationController
   def patient_params
     params.require(:patient).permit(:first_name, :last_name, :date_of_birth, :gender, :reason_for_visit, :insurance, :policy_number, :telephone, :address, :email)
   end
-  # Use callbacks to share common setup or constraints between actions.
-  def set_patient
-    @patient = Patient.find(params[:id])
-  end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
-  def patient_params
-    params.require(:patient).permit(:first_name, :last_name, :date_of_birth, :gender, :reason_for_visit, :insurance, :policy_number, :telephone, :address, :email)
-  end
 end
