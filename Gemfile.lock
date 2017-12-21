@@ -187,11 +187,11 @@ DEPENDENCIES
   byebug
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
-<<<<<<< HEAD
+
   dotenv-rails
-=======
+
   faker
->>>>>>> exam_model
+
   hirb
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)

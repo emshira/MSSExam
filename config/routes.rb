@@ -1,38 +1,25 @@
-# Rails.application.routes.draw do
-#   resources :patients
-#   resources :practitioners
-#
-#   resources :questions
-#
-#
-#   resources :canvas_question_as
-#
-#
-#   root 'practitioners#index'
-#
-#   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-# end
-
 Rails.application.routes.draw do
-root 'practitioners#index'
-resources :patients
-resources :practitioners
-resources :questions
-resources :canvas_question_as
 
-# resources :practitioners do
-#   collection do
-#     get :login
-#   end
-# end
+  root 'practitioners#index'
+  resources :password_resets
+  resources :patients
+  resources :practitioners
+  resources :questions
+  resources :canvas_question_as
 
-get '/login' => 'sessions#new'
-post '/login' => 'sessions#create'
-get '/logout' => 'sessions#destroy'
+  # resources :practitioners do
+  #   collection do
+  #     get :login
+  #   end
+  # end
 
-get '/landing' => 'practitioners#landing'
-get '/signup' => 'practitioners#new'
-post '/create' => 'practitioners#create'
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
 
-# For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get '/landing' => 'practitioners#landing'
+  get '/signup' => 'practitioners#new'
+  post '/create' => 'practitioners#create'
+
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

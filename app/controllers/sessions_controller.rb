@@ -5,14 +5,13 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @practitioner = Practitioner.
-    find_by(identification: params[:identification]).
-    try(:authenticate, params[:password])
-
-    return render action: 'new' unless @practitioner
-
-    session[:practitioner_id] = @practitioner.id
-    redirect_to new_practitioner_path
+    @practitioner = Practitioner.find_by_email(params[:practitioner][:email])
+    if !!@practitioner && @practitioner.authenticate(params[:practitioner][:password])
+      session[:practitioner_id] = @practitioner.id
+      redirect_to '/login'
+    else
+      redirect_to new_practitioner_path
+    end
   end
 
   def destroy
