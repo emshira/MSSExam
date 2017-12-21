@@ -40,7 +40,7 @@
     <% end %>
 
 
-    <% if [Subject::LAN_CMD_TWO, Subject::LAN_COPY].include?(question.subject) %>
+    <% if Subject::LAN_CMD_TWO == question.subject %>
       <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal<%= question.subject.id %>">
        Launch modal
       </button>
@@ -54,7 +54,7 @@
            </div>
            <div class="modal-body">
              <div class="col-xs-12">
-                <h2>Draw Something:</h2>
+                <h2>Write Something:</h2>
                <canvas width="500" height="700" id="canvas" style="background: white";></canvas>
                 <ul>
                   <li> <input type="range" id="marker" max="10" min="1" value-"1"></li>
@@ -70,6 +70,39 @@
        </div>
       </div>
      <% end %>
+
+     <% if Subject::LAN_COPY == question.subject %>
+       <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal<%= question.subject.id %>">
+        Launch modal
+       </button>
+       <!-- Modal -->
+       <div class="modal fade" id="myModal<%= question.subject.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <%= image_tag("pent.png") %>
+              <button type="button" class="close" data-dismiss="modal" aria-label="close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel"><%= question.question %></h4>
+            </div>
+            <div class="modal-body">
+              <div class="col-xs-12">
+                 <h2>Draw Something:</h2>
+                <canvas width="500" height="700" id="canvas" style="background: white";></canvas>
+                 <ul>
+                   <li> <input type="range" id="marker" max="10" min="1" value-"1"></li>
+                   <li><button class="clear" id="clear">Clear Scetchbook</button></li>
+                 </ul>
+                 </div><!--end container-->
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+       </div>
+      <% end %>
+
     <%= select_tag "question[]", options_for_select((range).step(1) {|s| ["#{s}%", s]}), data: { question: question}%>
     <br>
   <% end %>
