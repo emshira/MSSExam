@@ -4,7 +4,7 @@
 
 <table>
   <thead>
-    <!-- <tr>
+    <tr>
       <th>First name</th>
       <th>Last name</th>
       <th>Date of birth</th>
@@ -17,7 +17,7 @@
       <th>Email</th>
       <th colspan="3"></th>
     </tr>
-  </thead> -->
+  </thead>
 
   <tbody>
     <% @patients.each do |pt| %>
@@ -43,6 +43,7 @@
 </table>
 
 <br>
+<% end %>
 
 <%= link_to 'New Patient', new_patient_path %>
-<% end %>
+<%= link_to 'Back', '/login' %>

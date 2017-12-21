@@ -3,10 +3,10 @@ class PasswordResetsController < ApplicationController
   end
 
   def create
-    @practitioner = Practitioner.find_by(params[:email])
+    @practitioner = Practitioner.find_by(email: params[:email])
     @practitioner.send_password_reset if @practitioner
     flash[:notice] = 'E-mail sent with password reset instructions.'
-    redirect_to new_session_path
+    redirect_to login_path
   end
 
   def index
