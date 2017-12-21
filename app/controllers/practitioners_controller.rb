@@ -1,5 +1,5 @@
 class PractitionersController < ApplicationController
-  before_action :authorize, except: [:new, :create, :landing]
+  before_action :authorize, except: [:new, :create, :landing, :landed]
 
   def index
     @practioners = Practitioner.all
@@ -11,6 +11,16 @@ class PractitionersController < ApplicationController
 
   def edit
 
+  end
+
+  def landing
+  end
+
+  def landed
+    f = params[:q].first.values.map(&:to_i)
+    p f.reduce(&:+)
+    render 'landing'
+    redirect_to landing
   end
 
   def new
