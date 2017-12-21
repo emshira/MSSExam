@@ -25,26 +25,29 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-  <body>
-
 <body>
 
-  <header>
-    <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-      <div class="nav">
-        <% if current_practitioner  %>
-        Signed in as <%= current_practitioner.email %> | <%= link_to "Logout", '/logout' %>
-        <% else %>
-        <%= link_to 'Login', '/login' %> | <%= link_to 'Create Account', new_practitioner_path %>
-        <% end %>
-      </div>
-    </nav>
-  </header>
+  <body>
 
-  <%= yield %>
-  <footer>
-    Something will go here
-  </footer>
-</body>
+    <header>
+      <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+        <div class="nav">
+          <% if current_practitioner  %>
+          Signed in as <%= current_practitioner.email %> | <%= link_to "Logout", '/logout' %>
+          <% else %>
+          <%= link_to 'Login', '/login' %> | <%= link_to 'Create Account', new_practitioner_path %>
+          <% end %>
+          <p class="home-link">
+            <%= link_to 'Home', practitioners_path %>
+          </p>
+        </div>
+      </nav>
+    </header>
+
+    <%= yield %>
+    <footer>
+      Something will go here
+    </footer>
+  </body>
 </head>
 </html>
