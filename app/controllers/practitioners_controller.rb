@@ -17,10 +17,11 @@ class PractitionersController < ApplicationController
   end
 
   def landed
-    f = params[:q].first.values.map(&:to_i)
+    byebug
+    f = params[:question].first.values.map(&:to_i)
     p f.reduce(&:+)
     render 'landing'
-    redirect_to landing
+
   end
 
   def new
