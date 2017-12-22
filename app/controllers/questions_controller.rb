@@ -13,10 +13,10 @@ class QuestionsController < ApplicationController
     end
 
   end
-  
+
 
   def show
-    # @questions = Question.all
+     
   end
   def index
     @questions = Questions.all

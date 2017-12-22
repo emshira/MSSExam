@@ -14,13 +14,19 @@ class PractitionersController < ApplicationController
   end
 
   def landing
+    @patient = Patient.find(params[:patient_id])
   end
 
   def landed
     f = params[:question].map(&:to_i)
-    result = f.reduce(&:+)
-    patient_score = PatientScore.create(total: result)
-    render 'landing'
+     result = f.reduce(&:+)
+
+    patient_score = PatientScore.create(total: result, patient_id: params[:patient_id])
+    # redirect_to :landing
+    # patient = Patient.find(params[:patient_id])
+    # ->routes
+    redirect_to "/landing/#{params[:patient_id]}"
+
   end
 
   def new

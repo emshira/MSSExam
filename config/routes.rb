@@ -4,8 +4,10 @@ Rails.application.routes.draw do
   resources :password_resets
   resources :patients
   resources :practitioners
-  resources :questions
+  resources :questions, except: [:new]
   resources :canvas_question_as
+
+  get "/questions/new/:id" => "questions#new", :as => "new_question"
 
   # resources :practitioners do
   #   collection do
@@ -17,7 +19,8 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
 
-  get '/landing' => 'practitioners#landing'
+  post '/landed' => 'practitioners#landed'
+  get '/landing/:patient_id' => 'practitioners#landing'
   get '/signup' => 'practitioners#new'
   post '/create' => 'practitioners#create'
 

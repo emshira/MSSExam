@@ -23,7 +23,7 @@
 
     <% @patients.each do |patient| %>
     <tr>
-      <td><%= link_to patient.first_name, new_question_path%></td>
+      <td><%= link_to patient.first_name, new_question_path(patient.id)%></td>
       <td><%= patient.last_name %></td>
       <td><%= patient.date_of_birth %></td>
       <td><%= patient.gender %></td>
