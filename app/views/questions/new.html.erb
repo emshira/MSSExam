@@ -1,3 +1,4 @@
+<%= form_with(url: "/landed") do |f| %>
 <% @questions.group_by(&:subject).each do |grouped_question |%>
   <% questions = grouped_question.last %>
     <% questions.each do |question|%>
@@ -11,9 +12,8 @@
     <% elsif question.subject == Subject::LAN_CMD_TWO %>
       <% range = 0..1 %>
     <% else %>
-      <% range = 1..5 %>
+      <% range = 0..5 %>
     <% end %>
-
 
 
     <% if Subject::LAN_CMD_ONE == question.subject%>
@@ -27,17 +27,18 @@
             <h4 class="modal-title" id="myModalLabel"><%= question.question %></h4>
           </div>
           <div class="modal-body">
+            <center>
             <h1>Close Your Eyes</h1>
+          </center>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
           </div>
         </div>
       </div>
     </div>
-
-    <% end %>
+<% end %>
 
 
     <% if Subject::LAN_CMD_TWO == question.subject %>
@@ -64,7 +65,7 @@
            </div>
            <div class="modal-footer">
              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-             <button type="button" class="btn btn-primary">Save changes</button>
+             <!-- <button type="button" value="submit" class="btn btn-primary">Save changes</button> -->
            </div>
          </div>
        </div>
@@ -96,7 +97,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+              <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
             </div>
           </div>
         </div>
@@ -106,8 +107,27 @@
     <%= select_tag "question[]", options_for_select((range).step(1) {|s| ["#{s}%", s]}), data: { question: question}%>
     <br>
   <% end %>
+
 <hr>
 <% end %>
-<input class="btn btn-primary" type="submit" value="Submit">
+<%= f.hidden_field :patient_id, value: params[:id] %>
+<%= f.submit "Submit" %>
+<% end %>
+
+
+<!-- <form action="/landing" >
+  <button type="submit">Button</button>
+</form> -->
+<!-- <input class="btn btn-primary" type="submit" value="Submit"> -->
 <br>
 <%= link_to "Next", new_canvas_question_a_path %>
+
+<%# form_with(url: "/landed") do |f| %>
+  <%# f.select "q[]question", [3,4,5]%>
+  <%#f.select "q[]question2", [3,4,5]%>
+<%# f.submit "Submit" %>
+
+
+<!-- <form action="example.com" >
+  <button type="submit">Button</button>
+</form>  -->

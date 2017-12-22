@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171220204948) do
+ActiveRecord::Schema.define(version: 20171221193324) do
 
   create_table "canvas_question_as", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -20,6 +20,14 @@ ActiveRecord::Schema.define(version: 20171220204948) do
   create_table "canvas_question_bs", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "patient_scores", force: :cascade do |t|
+    t.integer "total"
+    t.integer "patient_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["patient_id"], name: "index_patient_scores_on_patient_id"
   end
 
   create_table "patients", force: :cascade do |t|
