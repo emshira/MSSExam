@@ -7,11 +7,11 @@
     <tr>
       <th>First name</th>
       <th>Last name</th>
-      <th>Date of birth</th>
+      <th>DOB</th>
       <th>Gender</th>
-      <th>Reason for visit</th>
+      <th>Reason</th>
       <th>Insurance</th>
-      <th>Policy number</th>
+      <th>Policy No.</th>
       <th>Telephone</th>
       <th>Address</th>
       <th>Email</th>
@@ -23,19 +23,19 @@
 
     <% @patients.each do |patient| %>
     <tr>
-      <td><%= link_to patient.first_name, new_question_path(patient.id)%></td>
-      <td><%= patient.last_name %></td>
-      <td><%= patient.date_of_birth %></td>
-      <td><%= patient.gender %></td>
-      <td><%= patient.reason_for_visit %></td>
-      <td><%= patient.insurance %></td>
-      <td><%= patient.policy_number %></td>
-      <td><%= patient.telephone %></td>
-      <td><%= patient.address %></td>
-      <td><%= patient.email %></td>
-      <td><%= link_to 'Show', patient %></td>
-      <td><%= link_to 'Edit', edit_patient_path(patient) %></td>
-      <td><%= link_to 'Destroy', patient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td width='10%'><%= link_to patient.first_name, new_question_path%></td>
+      <td width='10%'><%= patient.last_name %></td>
+      <td width='10%'><%= patient.date_of_birth %></td>
+      <td width='10%'><%= patient.gender %></td>
+      <td width='10%'><%= patient.reason_for_visit %></td>
+      <td width='10%'><%= patient.insurance %></td>
+      <td width='10%'><%= patient.policy_number %></td>
+      <td width='10%'><%= patient.telephone %></td>
+      <td width='10%'><%= patient.address %></td>
+      <td width='10%'><%= patient.email %></td>
+      <td width='10%'><%= link_to 'Show', patient %></td>
+      <td width='10%'><%= link_to 'Edit', edit_patient_path(patient) %></td>
+      <td width='10%'><%= link_to 'Destroy', patient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
     <% end %>
   </tbody>
