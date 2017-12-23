@@ -2,7 +2,9 @@ Rails.application.routes.draw do
 
   root 'practitioners#index'
   resources :password_resets
-  resources :patients
+  resources :patients do
+    
+  end
   resources :practitioners
   resources :questions, except: [:new]
   resources :canvas_question_as
