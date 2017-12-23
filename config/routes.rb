@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   get '/logout' => 'sessions#destroy'
 
   post '/landed' => 'practitioners#landed'
-  get '/landing/:patient_id' => 'practitioners#landing'
+  get '/landing/' => 'practitioners#landing'
   get '/signup' => 'practitioners#new'
   post '/create' => 'practitioners#create'
 

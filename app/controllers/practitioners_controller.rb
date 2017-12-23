@@ -14,7 +14,7 @@ class PractitionersController < ApplicationController
   end
 
   def landing
-    @patient = Patient.find(params[:patient_id])
+    @patient = Patient.find_by(params[:patient_id])
   end
 
   def landed
