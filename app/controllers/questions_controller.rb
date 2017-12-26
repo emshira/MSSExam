@@ -14,11 +14,12 @@ class QuestionsController < ApplicationController
 
   end
 
+
   def show
-    @questions = Questions.find_by(params[:id])
+     
   end
   def index
-    @questions = Question.all
+    @questions = Questions.all
   end
 
 end
