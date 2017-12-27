@@ -13,12 +13,44 @@
 *= require_tree .
 *= require_self
 */
-.signed-in {
-  color: pink;
-  border: black;
-  position: absolute;
+
+.logged-in {
+  background: url("keyboard_doc.jpg");
+  image-resolution: 0.5;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  color: #907F9F;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
 }
 
-.navbar {
-width: inherit;
+.nav-active {
+  color: #FF3E41;
+  position: fixed;
+  right: 20px;
+  padding-top: 15px;
+  font-size: 12px;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.home-link {
+  color: #F5DDDD;
+  position: fixed;
+  left: 20px;
+  padding-top: 15px;
+  font-size: 12px;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.user-input {
+  background-color: white;
+  opacity: 0.7;
+  text-align: center;
+  border: 6px solid rgba(222, 255, 255, 0.3);
+  border-radius: 20px;
+  width: 1000px;
+  margin: 300px auto;
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
