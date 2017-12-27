@@ -28,11 +28,8 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
 </head>
 <body>
-
-  <body>
-
     <header class="nav">
-      <nav class="navbar navbar-static-top" style="background-color: #42253B;">
+      <nav class="navbar" style="background-color: #42253B;">
         <div class="nav-active">
           <% if current_practitioner  %>
           Signed in as <%= current_practitioner.email %> | <%= link_to "Logout", '/logout' %>
@@ -45,10 +42,20 @@
             <%= link_to 'Home', practitioners_path %>
           </p>
         </div>
+        <div class="logo1">
+          <%= image_tag ("logo1.png") %>
+        </div>
+        <div class="logo2">
+          <%= image_tag ("logo2.png") %>
+        </div>
       </nav>
     </header>
+    <div class="Question">
+    </div>
+    <div class="container">
+      <%= yield %>
+    </div>
 
-    <%= yield %>
 
   </body>
 </head>
