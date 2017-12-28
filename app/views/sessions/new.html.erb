@@ -1,19 +1,24 @@
+<body class="logged-in">
+
+<div class="user-input">
+
 <% if !!current_practitioner %>
 
-<h1>Mini Mental State Exam</h1>
+<h1 class="title">Mini Mental State Exam</h1>
 
 <p>
   <%= link_to 'Select Patient', patients_path %>
 </p>
-
+<br>
 <%= @testing %>
 
 <p>
   <%= link_to 'Create New Patient', new_patient_path %>
 </p>
-
+<br>
 <% else %>
-<h1 class="title-login">Mini Mental State Exam</h1>
+
+<h1 class="title">Mini Mental State Exam</h1>
 <br>
 <br>
 <h3>Practitioner Log in</h3>
@@ -34,3 +39,5 @@
 <% end %>
 
 <% end %>
+</div>
+</body>

@@ -52,12 +52,16 @@ class PatientsController < ApplicationController
       format.json { head :no_content }
     end
   end
-  # Use callbacks to share common setup or constraints between actions.
-  def set_patient
-    @patient = Patient.find(params[:id])
-  end
-  # Never trust parameters from the scary internet, only allow the white list through.
-  def patient_params
-    params.require(:patient).permit(:first_name, :last_name, :date_of_birth, :gender, :reason_for_visit, :insurance, :policy_number, :telephone, :address, :email)
-  end
+
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_patient
+      @patient = Patient.find(params[:id])
+    end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def patient_params
+      params.require(:patient).permit(:first_name, :last_name, :date_of_birth, :gender, :reason_for_visit, :insurance, :policy_number, :telephone, :address, :email)
+    end
+  
 end

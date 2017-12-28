@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>MMSE</title>
   <%= csrf_meta_tags %>
@@ -24,30 +25,38 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
 </head>
 <body>
-
-  <body>
-
-    <header>
-      <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-        <div class="nav">
+    <header class="nav">
+      <nav class="navbar" style="background-color: #3b2c59">
+        <div class="nav-active">
           <% if current_practitioner  %>
           Signed in as <%= current_practitioner.email %> | <%= link_to "Logout", '/logout' %>
           <% else %>
           <%= link_to 'Login', '/login' %> | <%= link_to 'Create Account', new_practitioner_path %>
           <% end %>
-          <p class="home-link">
+        </div>
+        <div class="home-link">
+          <p>
             <%= link_to 'Home', practitioners_path %>
           </p>
         </div>
+        <div class="logo1">
+          <%= image_tag ("logo1.png") %>
+        </div>
+        <div class="logo2">
+          <%= image_tag ("logo2.png") %>
+        </div>
       </nav>
     </header>
+    <div class="Question">
+    </div>
+    <div class="container">
+      <%= yield %>
+    </div>
 
-    <%= yield %>
-    <footer>
-      Something will go here
-    </footer>
+
   </body>
 </head>
 </html>
