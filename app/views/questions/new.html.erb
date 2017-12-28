@@ -1,117 +1,130 @@
-<%= form_with(url: "/landed") do |f| %>
-<% @questions.group_by(&:subject).each do |grouped_question |%>
-  <% questions = grouped_question.last %>
-    <% questions.each do |question|%>
-    <%= question.question %>
-    <% if question.subject == Subject::TEMP_TIME or question.subject == Subject::SPA_PLACE or question.subject == Subject::LAN_REP or question.subject == Subject::LAN_CMD_ONE or question.subject == Subject::LAN_COPY %>
-      <% range = 0..1 %>
-    <% elsif question.subject == Subject::REG or question.subject == Subject::REC or question.subject == Subject::LAN_COMPLEX %>
-      <% range = 0..3 %>
-    <% elsif question.subject == Subject::LAN_NAME %>
-      <% range = 0..2 %>
-    <% elsif question.subject == Subject::LAN_CMD_TWO %>
-      <% range = 0..1 %>
-    <% else %>
-      <% range = 0..5 %>
-    <% end %>
+<h1><center><font size="10" face="georgia">Mini Mental State Exam (MMSE)</center></font></h1>
+<br>
+<br>
+<%= form_with(url: "/landed", class: "landed-form") do |f| %>
+  <% @questions.group_by(&:subject).each do |grouped_question |%>
 
-
-    <% if Subject::LAN_CMD_ONE == question.subject%>
-    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal<%= question.subject.id %>">Launch</button>
-
-    <div class="modal fade" id="myModal<%= question.subject.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel"><%= question.question %></h4>
-          </div>
-          <div class="modal-body">
-            <center>
-            <h1>Close Your Eyes</h1>
-          </center>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-          </div>
-        </div>
-      </div>
-    </div>
-<% end %>
-
-
-    <% if Subject::LAN_CMD_TWO == question.subject %>
-      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal<%= question.subject.id %>">
-       Launch modal
-      </button>
-      <!-- Modal -->
-      <div class="modal fade" id="myModal<%= question.subject.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-       <div class="modal-dialog" role="document">
-         <div class="modal-content">
-           <div class="modal-header">
-             <button type="button" class="close" data-dismiss="modal" aria-label="close"><span aria-hidden="true">&times;</span></button>
-             <h4 class="modal-title" id="myModalLabel"><%= question.question %></h4>
-           </div>
-           <div class="modal-body">
-             <div class="col-xs-12">
-                <h2>Write Something:</h2>
-               <canvas width="500" height="700" id="canvas" style="background: white";></canvas>
-                <ul>
-                  <li> <input type="range" id="marker" max="10" min="1" value-"1"></li>
-                  <li><button class="clear" id="clear">Clear Scetchbook</button></li>
-                </ul>
-                </div><!--end container-->
-           </div>
-           <div class="modal-footer">
-             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-             <!-- <button type="button" value="submit" class="btn btn-primary">Save changes</button> -->
-           </div>
-         </div>
-       </div>
-      </div>
-     <% end %>
-
-     <% if Subject::LAN_COPY == question.subject %>
-       <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal<%= question.subject.id %>">
-        Launch modal
-       </button>
-       <!-- Modal -->
-       <div class="modal fade" id="myModal<%= question.subject.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <%= image_tag("pent.png") %>
-              <button type="button" class="close" data-dismiss="modal" aria-label="close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="myModalLabel"><%= question.question %></h4>
-            </div>
-            <div class="modal-body">
-              <div class="col-xs-12">
-                 <h2>Draw Something:</h2>
-                <canvas width="500" height="700" id="canvas" style="background: white";></canvas>
-                 <ul>
-                   <li> <input type="range" id="marker" max="10" min="1" value-"1"></li>
-                   <li><button class="clear" id="clear">Clear Scetchbook</button></li>
-                 </ul>
-                 </div><!--end container-->
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-            </div>
-          </div>
-        </div>
-       </div>
+    <% questions = grouped_question.last %>
+      <% questions.each do |question|%>
+      <% if question.subject == Subject::TEMP_TIME or question.subject == Subject::SPA_PLACE or question.subject == Subject::LAN_REP or question.subject == Subject::LAN_CMD_ONE or question.subject == Subject::LAN_COPY %>
+        <% range = 0..1 %>
+      <% elsif question.subject == Subject::REG or question.subject == Subject::REC or question.subject == Subject::LAN_COMPLEX %>
+        <% range = 0..3 %>
+      <% elsif question.subject == Subject::LAN_NAME %>
+        <% range = 0..2 %>
+      <% elsif question.subject == Subject::LAN_CMD_TWO %>
+        <% range = 0..1 %>
+      <% else %>
+        <% range = 0..5 %>
       <% end %>
 
-    <%= select_tag "question[]", options_for_select((range).step(1) {|s| ["#{s}%", s]}), data: { question: question}%>
-    <br>
-  <% end %>
 
-<hr>
-<% end %>
-<%= f.hidden_field :patient_id, value: params[:id] %>
-<%= f.submit "Submit" %>
+      <div class="form-group col-xs-12">
+        <div class=" col-xs-6">
+          <label for=""><%= question.question %></label>
+        </div>
+        <% if Subject::LAN_CMD_ONE == question.subject%>
+            <button type="button" class="btn btn-primary btn-lg-q" data-toggle="modal" data-target="#myModal<%= question.subject.id %>">Launch modal</button>
+
+            <div class="modal fade" id="myModal<%= question.subject.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel"><%= question.question %></h4>
+                  </div>
+                  <div class="modal-body">
+                    <center>
+                    <h1>Close Your Eyes</h1>
+                  </center>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+        <% end %>
+
+
+        <% if Subject::LAN_CMD_TWO == question.subject %>
+          <button type="button" class="btn btn-primary btn-lg-q" data-toggle="modal" data-target="#myModal<%= question.subject.id %>">
+           Launch modal
+          </button>
+          <!-- Modal -->
+            <div class="modal fade" id="myModal<%= question.subject.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+             <div class="modal-dialog" role="document">
+               <div class="modal-content">
+                 <div class="modal-header">
+                   <button type="button" class="close" data-dismiss="modal" aria-label="close"><span aria-hidden="true">&times;</span></button>
+                   <h4 class="modal-title" id="myModalLabel"><%= question.question %></h4>
+                 </div>
+                 <div class="modal-body">
+                   <div class="col-xs-12">
+                      <h2>Write Something:</h2>
+                     <canvas width="500" height="700" id="canvas" style="background: white";></canvas>
+                      <ul>
+                        <li> <input type="range" id="marker" max="10" min="1" value-"1"></li>
+                        <li><button class="clear" id="clear">Clear Scetchbook</button></li>
+                      </ul>
+                      </div><!--end container-->
+                 </div>
+                 <div class="modal-footer">
+                   <button type="button" class="btn_q btn-default" data-dismiss="modal">Close</button>
+                   <!-- <button type="button" value="submit" class="btn btn-primary">Save changes</button> -->
+                 </div>
+               </div>
+             </div>
+            </div>
+        <% end %>
+
+        <% if Subject::LAN_COPY == question.subject %>
+           <button type="button" class="btn btn-primary btn-lg-q" data-toggle="modal" data-target="#myModal<%= question.subject.id %>">
+            Launch modal
+           </button>
+           <!-- Modal -->
+           <div class="modal fade" id="myModal<%= question.subject.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <%= image_tag("pent.png") %>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="myModalLabel"><%= question.question %></h4>
+                </div>
+                <div class="modal-body">
+                  <div class="col-xs-12">
+                     <h2>Draw Something:</h2>
+                    <canvas width="500" height="700" id="canvas" style="background: white";></canvas>
+                     <ul>
+                       <li> <input type="range" id="marker" max="10" min="1" value-"1"></li>
+                       <li><button class="clear" id="clear">Clear Scetchbook</button></li>
+                     </ul>
+                     </div><!--end container-->
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                </div>
+              </div>
+            </div>
+           </div>
+        <% end %>
+        <div class=" col-xs-2">
+          <%= select_tag "question[]", options_for_select((range).step(1) {|s| ["#{s}%", s]}), data: { question: question}, class: 'form-control'%>
+        </div>
+      </div>
+      <% end %>
+
+      <hr>
+      <% end %>
+  <div class="form-group col-xs-12">
+    <%= f.hidden_field :patient_id, value: params[:id] %>
+    <%= f.submit "Submit" , class: 'btn btn-success btn-lg'%>
+  </div>
+  <div class="form-group col-xs-12">
+
+  </div>
 <% end %>
 
 
@@ -119,8 +132,7 @@
   <button type="submit">Button</button>
 </form> -->
 <!-- <input class="btn btn-primary" type="submit" value="Submit"> -->
-<br>
-<%= link_to "Next", new_canvas_question_a_path %>
+
 
 <%# form_with(url: "/landed") do |f| %>
   <%# f.select "q[]question", [3,4,5]%>

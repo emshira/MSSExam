@@ -1,3 +1,46 @@
 // Place all the styles related to the sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+header{
+  position: relative;
+}
+.logo1{
+  position: absolute;
+  top: 0;
+  padding-top: 10px;
+  left: 10%;
+  z-index: 10;
+  img{
+    width: 80px;
+  }
+}
+.logo2{
+  position: absolute;
+  top: -50px;
+  left: calc(10% + 80px);
+  z-index: 10;
+  img{
+    width: 200px;
+  }
+}
+
+.navbar{
+  height: 100px
+
+}
+
+// for questions/new
+.landed-form{
+  font-size: 18px;
+  line-height: 180%;
+}
+
+.btn-primary.btn-lg-q{
+  border-radius: 20px;
+}
+
+
+.table-striped{
+    font-family: "Georgia", serif;
+    font-size: 120%;
+}

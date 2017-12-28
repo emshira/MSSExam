@@ -2,7 +2,10 @@ Rails.application.routes.draw do
 
   root 'practitioners#index'
   resources :password_resets
-  resources :patients
+  resources :patients do
+    resources :questions
+  end
+  
   resources :practitioners
   resources :questions, except: [:new]
   resources :canvas_question_as
@@ -20,7 +23,7 @@ Rails.application.routes.draw do
   get '/logout' => 'sessions#destroy'
 
   post '/landed' => 'practitioners#landed'
-  get '/landing/:patient_id' => 'practitioners#landing'
+  get '/landing/' => 'practitioners#landing'
   get '/signup' => 'practitioners#new'
   post '/create' => 'practitioners#create'
 
