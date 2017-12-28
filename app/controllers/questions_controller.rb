@@ -4,7 +4,7 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    @questions = Questions.new(params[:survey])
+    @questions = Question.new(params[:survey])
     if @questions.save
       flash[:notice] = "Successfully created survey."
       redirect_to @questions
