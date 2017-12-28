@@ -18,6 +18,7 @@
   background: url("keyboard_doc.jpg");
   image-resolution: 0.5;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   background-size: 100%;
   color: #907F9F;
   font-family: verdana, arial, helvetica, sans-serif;
@@ -30,7 +31,7 @@
   position: fixed;
   right: 20px;
   padding-top: 15px;
-  font-size: 12px;
+  font-size: 24px;
   font-family: 'Quicksand', sans-serif;
 }
 
@@ -39,7 +40,7 @@
   position: fixed;
   left: 20px;
   padding-top: 15px;
-  font-size: 12px;
+  font-size: 24px;
   font-family: 'Quicksand', sans-serif;
 }
 

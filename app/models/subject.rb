@@ -1,6 +1,5 @@
 class Subject < ApplicationRecord
   belongs_to :practitioners, optional: true
-
   has_many :questions
 
   TEMP_TIME    = self.find_by_title('Temporal Orientation to time')
