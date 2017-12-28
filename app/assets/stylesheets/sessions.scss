@@ -44,3 +44,14 @@ header{
     font-family: "Georgia", serif;
     font-size: 120%;
 }
+
+
+// for patient show.html.erb
+.newpt{
+  font-size: 18px;
+}
+.newpt .field{
+  display: grid;
+  grid-template-columns: 250px auto;
+  margin-bottom: 20px;
+}

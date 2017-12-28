@@ -1,7 +1,7 @@
 <h1><center><font size="10" face="georgia">Mini Mental State Exam (MMSE)</center></font></h1>
 <br>
 <br>
-<%= form_with(url: "/landed", class: "landed-form") do |f| %>
+<%= form_with(url: "/landed", class: "landed-form", method: 'POST') do |f| %>
   <% @questions.group_by(&:subject).each do |grouped_question |%>
 
     <% questions = grouped_question.last %>

@@ -1,4 +1,4 @@
-<%= form_with(model: patient, local: true) do |form| %>
+<%= form_with(model: patient, local: true, class: "newpt") do |form| %>
   <% if patient.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(patient.errors.count, "error") %> prohibited this patient from being saved:</h2>
@@ -13,52 +13,52 @@
 
   <div class="field">
     <%= form.label :first_name %>
-    <%= form.text_field :first_name, id: :patient_first_name %>
+    <%= form.text_field :first_name, id: :patient_first_name, class: "form-control"%>
   </div>
 
   <div class="field">
     <%= form.label :last_name %>
-    <%= form.text_field :last_name, id: :patient_last_name %>
+    <%= form.text_field :last_name, id: :patient_last_name, class: 'form-control'%>
   </div>
 
   <div class="field">
     <%= form.label :date_of_birth %>
-    <%= form.date_field :date_of_birth, id: :patient_date_of_birth %>
+    <%= form.date_field :date_of_birth, id: :patient_date_of_birth, class: 'form-control'%>
   </div>
 
   <div class="field">
     <%= form.label :gender %>
-    <%= form.text_field :gender, id: :patient_gender %>
+    <%= form.text_field :gender, id: :patient_gender, class: 'form-control'%>
   </div>
 
   <div class="field">
     <%= form.label :reason_for_visit %>
-    <%= form.text_area :reason_for_visit, id: :patient_reason_for_visit %>
+    <%= form.text_area :reason_for_visit, id: :patient_reason_for_visit, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= form.label :insurance %>
-    <%= form.text_field :insurance, id: :patient_insurance %>
+    <%= form.text_field :insurance, id: :patient_insurance, class: 'form-control'%>
   </div>
 
   <div class="field">
     <%= form.label :policy_number %>
-    <%= form.text_field :policy_number, id: :patient_policy_number %>
+    <%= form.text_field :policy_number, id: :patient_policy_number, class: 'form-control'%>
   </div>
 
   <div class="field">
     <%= form.label :telephone %>
-    <%= form.number_field :telephone, id: :patient_telephone %>
+    <%= form.number_field :telephone, id: :patient_telephone, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= form.label :address %>
-    <%= form.text_field :address, id: :patient_address %>
+    <%= form.text_field :address, id: :patient_address, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= form.label :email %>
-    <%= form.text_field :email, id: :patient_email %>
+    <%= form.text_field :email, id: :patient_email, class: 'form-control' %>
   </div>
 
   <div class="actions">
