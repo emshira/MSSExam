@@ -20,7 +20,7 @@ class PractitionersController < ApplicationController
 
   def landed
     f = params[:question].map(&:to_i)
-     result = f.reduce(&:+)
+    result = f.reduce(&:+)
 
     patient_score = PatientScore.create(total: result, patient_id: params[:patient_id])
     # redirect_to :landing

@@ -1,6 +1,7 @@
 class QuestionsController < ApplicationController
   def new
     @questions = Question.all
+    @patient_id = params[:patient_id]
   end
 
   def create
