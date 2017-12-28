@@ -1,6 +1,6 @@
 class Practitioner < ApplicationRecord
   has_secure_password
-  has_many :patients
+  has_many :patients, dependent: :destroy
 
   def send_password_reset
     generate_token(:password_reset_token)
