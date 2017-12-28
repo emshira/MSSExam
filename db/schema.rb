@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171221193324) do
+ActiveRecord::Schema.define(version: 20171228184356) do
 
   create_table "canvas_question_as", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 20171221193324) do
     t.text "reason_for_visit"
     t.string "insurance"
     t.string "policy_number"
-    t.integer "telephone"
+    t.string "telephone"
     t.string "address"
     t.string "email"
     t.datetime "created_at", null: false
