@@ -28,7 +28,8 @@
 
   <div class="field">
     <%= form.label :gender %>
-    <%= form.text_field :gender, id: :patient_gender, class: 'form-control'%>
+    <%= form.select :gender, %w{Male Female}, :prompt => 'Select', required: true, placeholder: 'Gender', class: 'field' %>
+    <%# form.text_field :gender, id: :patient_gender %>
   </div>
 
   <div class="field">
