@@ -1,43 +1,47 @@
 <body class="logged-in">
 
-<div class="user-input">
+  <div class="user-input">
 
-<% if !!current_practitioner %>
+    <% if !!current_practitioner %>
 
-<h1 class="title">Mini Mental State Exam</h1>
+    <h1 class="title">Mini Mental State Exam</h1>
+    <br>
+    <div class="select-patient">
+      <p>
+        <%= link_to 'Select Patient', patients_path %>
+        |
+      </p>
+      <br>
 
-<p>
-  <%= link_to 'Select Patient', patients_path %>
-</p>
-<br>
-<%= @testing %>
+      <%= @testing %>
 
-<p>
-  <%= link_to 'Create New Patient', new_patient_path %>
-</p>
-<br>
-<% else %>
+        <p>
+          <%= link_to ' Create New Patient', new_patient_path %>
+        </p>
+    </div>
 
-<h1 class="title">Mini Mental State Exam</h1>
-<br>
-<br>
-<h3>Practitioner Log in</h3>
-<%= form_tag '/login' do %>
-<p>
-  <%= label_tag "Practitioner Email" %>
-  <%= text_field_tag "practitioner[email]" %>
-</p>
-<p>
-  <%= label_tag "Practitioner Password" %>
-  <%= password_field_tag "practitioner[password]" %>
-</p>
-<p>
-  <%= submit_tag "Log in" %>
-  <p><%= link_to 'Forgot password', new_password_reset_path %>
-  </p>
-</p>
-<% end %>
+    <% else %>
 
-<% end %>
-</div>
+    <h1 class="title">Mini Mental State Exam</h1>
+    <br>
+    <br>
+    <h3>Practitioner Log in</h3>
+    <%= form_tag '/login' do %>
+    <p>
+      <%= label_tag "Practitioner Email" %>
+      <%= text_field_tag "practitioner[email]" %>
+    </p>
+    <p>
+      <%= label_tag "Practitioner Password" %>
+      <%= password_field_tag "practitioner[password]" %>
+    </p>
+    <p>
+      <%= submit_tag "Log in" %>
+      <p><%= link_to 'Forgot password', new_password_reset_path %>
+      </p>
+    </p>
+    <% end %>
+
+    <% end %>
+  </div>
 </body>
