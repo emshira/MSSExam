@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   get '/landing/:patient_id' => 'practitioners#landing'
   get '/signup' => 'practitioners#new'
   post '/create' => 'practitioners#create'
+  get '/landing' => 'practitioners#landing'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
