@@ -10,12 +10,6 @@ gem 'hirb'
 gem 'rails', '~> 5.1.4'
 # Use sqlite3 as the database for Active Record in Development
 # gem 'sqlite3', group: :development
-group :development do
-  gem 'sqlite3'
-end
-group :production do
-  gem 'pg'
-end
 
 # Use postgreSQL as the database for Active Record in Production
 # gem 'pg', group: :production
@@ -56,6 +50,7 @@ group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'sqlite3'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
@@ -69,6 +64,7 @@ gem 'rails-erd'
 
 group :production do
   gem 'rails_12factor'
+  gem 'pg'
 end
 
 # Added at 2017-12-29 17:36:03 -0500 by shira:
