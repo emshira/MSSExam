@@ -13,60 +13,84 @@
 *= require_tree .
 *= require_self
 */
-.title {
-  padding-bottom: 3em;
+*a {
+  color: none;
+  text-decoration: none;
+}
+
+/* Application yield page */
+html {
+  overflow-y: scroll;
+}
+
+header {
+  position: fixed;
+}
+
+.logo1 {
+  margin-left: 2em;
 }
 
 
-.fixed {
-  /*position: fixed;*/
-  top: 0;
-  left: 0;
-  right: 0;
-  /*z-index: 1030;*/
-}
-
-.logged-in {
-  background: url("keyboard_doc.jpg");
-  image-resolution: 0.5;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 100%;
-  color: #907F9F;
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
-}
-
+/* Practioner logged on status navbar left corner */
 
 .nav-active {
-  color: #fcf8e3;
+  color: #51006a;
   position: fixed;
   right: 20px;
-  padding-top: 15px;
+  padding-top: 30px;
   font-size: 24px;
-  font-family: 'Quicksand', sans-serif;
+  font-family: georgia;
+  margin-right: 2em;
+
 }
 
+/* Home buttom navbar top right corner */
+
 .home-link {
-  color: #F5DDDD;
   position: fixed;
   left: 20px;
-  padding-top: 15px;
+  padding-top: 25px;
   font-size: 24px;
-  font-family: 'Quicksand', sans-serif;
+  font-family: georgia;
+  margin-left: 2em;
 }
+
+/* Home buttom on navbar */
 
 .font-24 {
   font-size: 23px !important;
 }
 
+/*** Attributes to keep nav bar active ***/
+
+.fixed {
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+/*** Sessions-New page Practitioner homepage background settings ***/
+
+.practitioner-home {
+  background: url("keyboard_doc.jpg");
+  image-resolution: 0.5;
+  height:100%;
+  width:100%;
+  overflow:scroll;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100%;
+}
+
+/*** Session-New page for login credentials ***/
 
 .user-input {
+  box-shadow: 5px 7px #888888;
   background-color: white;
-  opacity: 0.8;
-  text-align: center;
-  border: 6px solid rgba(222, 255, 255, 0.3);
+  color: #4d098a;
+  opacity: 0.82;
+  border: 4px solid rgba(222, 255, 255, 0.3);
   border-radius: 20px;
   width: 1000px;
   margin: 300px auto;
@@ -74,7 +98,62 @@
   padding-bottom: 100px;
 }
 
-.select-patient {
-  display: flex;
-  justify-content: center;
+
+/*** Sessions-New page for title in center of page ***/
+
+.title {
+  font-family: georgia;
+  text-align: center;
+  padding-bottom: 2em;
 }
+
+/*** Sessions-New for Selection/Create Practitioner in center box ***/
+
+.user {
+  font-family: georgia;
+  font-size: 24px;
+}
+
+/*.select-patient {
+  left: 20px;
+}
+
+.create-patient {
+  right: 20px;
+}*/
+
+/*** Patient-Index page ***/
+
+.patient-title {
+  text-align: center;
+  font-family: georgia;
+  font size: 10em;
+}
+
+/*** Patient-Index page ***/
+
+.back-button {
+  position: fixed;
+  left: 20px;
+}
+/*** Patient-Index page ***/
+
+.new-patient-button {
+  position: fixed;
+  right: 20px;
+}
+
+/*** New Patient Page ***/
+
+.new-patient-title {
+  text-align: center;
+  font-family: georgia;
+  font size: 10em;
+}
+
+.actions {
+  position: fixed;
+  right: 20px;
+}
+
+/*** New Patient Questionnaire Page ***/

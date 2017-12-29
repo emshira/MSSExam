@@ -1,5 +1,7 @@
-<h1><center><font size="10" face="georgia">New Patient</center></font></h1>
 
 <%= render 'form', patient: @patient %>
 <br>
-<%= link_to 'Back', patients_path, class: 'btn btn-success btn-lg'%>
+
+  <div class="back-patient-button">
+    <%= link_to 'Back', patients_path, class: 'btn btn-success btn-lg' %>
+  </div>

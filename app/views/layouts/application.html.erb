@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>MMSE</title>
+  <title>📈MMSE</title>
   <%= csrf_meta_tags %>
   <link rel="stylesheet" type="text/css" href="questions.css">
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -29,35 +29,34 @@
 </head>
 <body>
   <header class="nav fixed">
-    <nav class="navbar" style="background-color: #ABC3CE">
+    <div class="navbar" style="background-color: #ABC3CE">
       <div class="nav-active">
         <% if current_practitioner  %>
-        Signed in as <%= current_practitioner.email %> | <%= link_to "Logout", '/logout' %>
+        Signed in as: <%= current_practitioner.email %> | <%= link_to "Logout", '/logout' %>
         <% else %>
         <%= link_to 'Login', '/login' %> | <%= link_to 'Create Account', new_practitioner_path %>
         <% end %>
       </div>
-
-      <div class="home-link">
-        <button>
-          <%= link_to 'Home', practitioners_path, class: 'btn btn-outline-primary font-24', type: 'button' %>
-        </button>
-      </div>
-
       <div class="logo1">
-        <%= image_tag ("logo1.png") %>
+        <%= link_to root_path do %>
+        <%= image_tag "logo1.png"%>
+        <% end %>
       </div>
       <div class="logo2">
-        <%= image_tag ("logo2.png") %>
+        <%= link_to root_path do %>
+        <%= image_tag "logo2.png" %>
+        <% end %>
       </div>
-    </nav>
+    </div>
   </header>
-  <div class="Question">
+  <div class="grow">
+    <div class="Question">
+    </div>
+    <div class="container">
+    </div>
   </div>
-  <div class="container">
-  </div>
-    <%= yield %>
 
+  <%= yield %>
 
 </body>
 </head>
