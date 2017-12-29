@@ -13,9 +13,9 @@
 *= require_tree .
 *= require_self
 */
-*a {
+* a {
   color: none;
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 /* Application yield page */
