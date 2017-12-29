@@ -64,3 +64,6 @@ gem 'rails-erd'
 group :production do
   gem 'rails_12factor'
 end
+
+# Added at 2017-12-29 17:36:03 -0500 by shira:
+gem "yarn", "~> 0.1.1"
