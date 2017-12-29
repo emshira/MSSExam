@@ -121,6 +121,10 @@
   <div class="form-group col-xs-12">
     <%= f.hidden_field :patient_id, value: params[:id] %>
     <%= f.submit "Submit" , class: 'btn btn-success btn-lg'%>
+    <br>
+    <br>
+    <%= link_to 'Back', patients_path, class: 'btn btn-success btn-lg'%>
+
   </div>
   <div class="form-group col-xs-12">
 

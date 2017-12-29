@@ -5,9 +5,11 @@
 <% if !!current_practitioner %>
 
 <h1 class="title">Mini Mental State Exam</h1>
-
+<br>
+<div class="select-patient">
 <p>
   <%= link_to 'Select Patient', patients_path %>
+  |
 </p>
 <br>
 <%= @testing %>
@@ -15,7 +17,8 @@
 <p>
   <%= link_to 'Create New Patient', new_patient_path %>
 </p>
-<br>
+</div>
+
 <% else %>
 
 <h1 class="title">Mini Mental State Exam</h1>
