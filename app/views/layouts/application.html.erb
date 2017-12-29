@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>MMSE</title>
+  <title>📈MMSE</title>
   <%= csrf_meta_tags %>
   <link rel="stylesheet" type="text/css" href="questions.css">
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -20,35 +20,36 @@
 
 </head>
 <body>
-    <header class="nav">
-      <nav class="navbar" style="background-color: #ABC3CE">
-        <div class="nav-active">
-          <% if current_practitioner  %>
-          Signed in as <%= current_practitioner.email %> | <%= link_to "Logout", '/logout' %>
-          <% else %>
-          <%= link_to 'Login', '/login' %> | <%= link_to 'Create Account', new_practitioner_path %>
-          <% end %>
-        </div>
-        <div class="home-link">
-          <p>
-            <%= link_to 'Home', practitioners_path %>
-          </p>
-        </div>
-        <div class="logo1">
-          <%= image_tag ("logo1.png") %>
-        </div>
-        <div class="logo2">
-          <%= image_tag ("logo2.png") %>
-        </div>
-      </nav>
-    </header>
+  <header class="nav fixed">
+    <div class="navbar" style="background-color: #ABC3CE">
+      <div class="nav-active">
+        <% if current_practitioner  %>
+        Signed in as: <%= current_practitioner.email %> | <%= link_to "Logout", '/logout' %>
+        <% else %>
+        <%= link_to 'Login', '/login' %> | <%= link_to 'Create Account', new_practitioner_path %>
+        <% end %>
+      </div>
+      <div class="logo1">
+        <%= link_to root_path do %>
+        <%= image_tag "logo1.png"%>
+        <% end %>
+      </div>
+      <div class="logo2">
+        <%= link_to root_path do %>
+        <%= image_tag "logo2.png" %>
+        <% end %>
+      </div>
+    </div>
+  </header>
+  <div class="grow">
     <div class="Question">
     </div>
     <div class="container">
-      <%= yield %>
     </div>
+  </div>
 
+  <%= yield %>
 
-  </body>
+</body>
 </head>
 </html>

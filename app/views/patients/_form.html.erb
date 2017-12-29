@@ -1,3 +1,10 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1 class="new-patient-title">New Patient</h1>
+
 <%= form_with(model: patient, local: true, class: "newpt") do |form| %>
   <% if patient.errors.any? %>
     <div id="error_explanation">
@@ -28,7 +35,7 @@
 
   <div class="field">
     <%= form.label :gender %>
-    <%= form.select :gender, %w{Male Female}, :prompt => 'Select', required: true, placeholder: 'Gender', class: 'field-control' %>
+    <%= form.select :gender, %w{Male Female}, :prompt => 'Select', required: true, placeholder: 'Gender', class: 'form-control' %>
     <!-- <%= form.text_field :gender, id: :patient_gender, class: 'form-control'%> -->
   </div>
 
@@ -63,7 +70,7 @@
   </div>
 <br>
 <br>
-  <div class="actions">
-    <%= form.submit %>
+  <div class="new-patient-button">
+    <%= form.submit :Submit, class:'btn btn-success btn-lg'  %>
   </div>
 <% end %>
