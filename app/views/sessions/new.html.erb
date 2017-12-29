@@ -1,23 +1,21 @@
-<body class="logged-in">
+<div class="practitioner-home">
 
   <div class="user-input">
 
     <% if !!current_practitioner %>
 
     <h1 class="title">Mini Mental State Exam</h1>
-    <br>
-    <div class="select-patient">
-      <p>
+
+    <div class="user">
+      <div class="select-patient">
         <%= link_to 'Select Patient', patients_path %>
-        |
-      </p>
-      <br>
+      </div>
 
       <%= @testing %>
 
-        <p>
-          <%= link_to ' Create New Patient', new_patient_path %>
-        </p>
+      <div class="create-patient">
+        <%= link_to 'Create New Patient', new_patient_path %>
+      </div>
     </div>
 
     <% else %>
@@ -44,4 +42,4 @@
 
     <% end %>
   </div>
-</body>
+</div>
