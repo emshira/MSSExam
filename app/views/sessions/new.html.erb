@@ -6,18 +6,19 @@
 
     <h1 class="title">Mini Mental State Exam</h1>
 
-    <div class="user">
-      <div class="select-patient">
-        <%= link_to 'Select Patient', patients_path %>
-      </div>
+    <div class="select-patient-session">
+      <div class="user">
+        <div class="select-patient">
+          <%= link_to 'Select Patient', patients_path %>
+        </div>
 
-      <%= @testing %>
+        <%= @testing %>
 
-      <div class="create-patient">
-        <%= link_to 'Create New Patient', new_patient_path %>
+        <div class="create-patient">
+          <%= link_to 'Create New Patient', new_patient_path %>
+        </div>
       </div>
     </div>
-
     <% else %>
 
     <h1 class="title">Mini Mental State Exam</h1>

@@ -61,23 +61,6 @@
 
 }
 
-/* Home buttom navbar top right corner */
-
-.home-link {
-  position: fixed;
-  left: 20px;
-  padding-top: 25px;
-  font-size: 24px;
-  font-family: georgia;
-  margin-left: 2em;
-}
-
-/* Home buttom on navbar */
-
-.font-24 {
-  font-size: 23px !important;
-}
-
 /*** Attributes to keep nav bar active ***/
 
 .fixed {
@@ -96,7 +79,7 @@
   overflow:scroll;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: 100%;
+  background-size: cover !important;
 }
 
 /*** Session-New page for login credentials ***/
@@ -130,15 +113,17 @@
   font-size: 24px;
 }
 
-/*.select-patient {
+.select-patient {
   left: 20px;
 }
 
 .create-patient {
   right: 20px;
-}*/
+}
 
 /*** Patient-Index page ***/
+
+.select-
 
 .patient-title {
   text-align: center;
