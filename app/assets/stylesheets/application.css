@@ -169,6 +169,15 @@
   right: 20px;
 }
 
+
+
+/***create new account*/
+.save-button {
+  position: fixed;
+  left: 20px;
+  padding-left: 230px;
+
+}
 /*** Patient-Index page ***/
 
 .patient-page-table {

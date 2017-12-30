@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20171228184356) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "canvas_question_as", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -24,7 +27,7 @@ ActiveRecord::Schema.define(version: 20171228184356) do
 
   create_table "patient_scores", force: :cascade do |t|
     t.integer "total"
-    t.integer "patient_id"
+    t.bigint "patient_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["patient_id"], name: "index_patient_scores_on_patient_id"
@@ -43,7 +46,7 @@ ActiveRecord::Schema.define(version: 20171228184356) do
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "practitioner_id"
+    t.bigint "practitioner_id"
     t.index ["practitioner_id"], name: "index_patients_on_practitioner_id"
   end
 
@@ -56,7 +59,7 @@ ActiveRecord::Schema.define(version: 20171228184356) do
     t.datetime "updated_at", null: false
     t.integer "patient_id"
     t.string "patient"
-    t.integer "practitioner_id"
+    t.bigint "practitioner_id"
     t.string "password_reset_token"
     t.datetime "password_reset_sent_at"
     t.string "practitioner"
@@ -67,12 +70,12 @@ ActiveRecord::Schema.define(version: 20171228184356) do
   end
 
   create_table "question_answers", force: :cascade do |t|
-    t.integer "question_id"
+    t.bigint "question_id"
     t.integer "score"
     t.string "patient_answer"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "practitioners_id"
+    t.bigint "practitioners_id"
     t.index ["practitioners_id"], name: "index_question_answers_on_practitioners_id"
     t.index ["question_id"], name: "index_question_answers_on_question_id"
   end
@@ -92,4 +95,9 @@ ActiveRecord::Schema.define(version: 20171228184356) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "patient_scores", "patients"
+  add_foreign_key "patients", "practitioners"
+  add_foreign_key "practitioners", "practitioners"
+  add_foreign_key "question_answers", "practitioners", column: "practitioners_id"
+  add_foreign_key "question_answers", "questions"
 end
