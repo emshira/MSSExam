@@ -1,5 +1,7 @@
 <h1 class="new-patient-title">New Patient</h1>
-
+<br>
+<br>
+<div class="new-patient-container">
 <%= form_with(model: patient, local: true, class: "newpt") do |form| %>
   <% if patient.errors.any? %>
     <div id="error_explanation">
@@ -63,9 +65,12 @@
     <%= form.label :email %>
     <%= form.text_field :email, id: :patient_email, class: 'form-control' %>
   </div>
-<br>
-<br>
+
   <div class="new-patient-button">
     <%= form.submit :Submit, class:'btn btn-success btn-lg'  %>
   </div>
+  <div class="back-patient-button">
+    <%= link_to 'Back', patients_path, class: 'btn btn-success btn-lg' %>
+  </div>
+</div>
 <% end %>
