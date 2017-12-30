@@ -7,6 +7,7 @@ practitioner = Practitioner.find_or_create_by!(
 	last_name: Faker::Name.unique.last_name,
 	identification: Faker::Number.number(5),
 	patient_id: patient,
+	password_digest: "123456"
 )
 p practitioner
 

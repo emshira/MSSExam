@@ -5,7 +5,8 @@ class ApplicationController < ActionController::Base
 
   def current_practitioner
     return unless session[:practitioner_id]
-    @current_practitioner ||= Practitioner.find(session[:practitioner_id])
+    @current_practitioner 
+    # @current_practitioner ||= Practitioner.find(session[:practitioner_id])
   end
 
   def authorize
