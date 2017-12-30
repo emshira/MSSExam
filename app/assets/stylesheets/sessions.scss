@@ -29,7 +29,7 @@ header{
 
 }
 
-// for questions/new
+// questions/new
 .landed-form{
   font-size: 18px;
   line-height: 180%;
@@ -46,7 +46,7 @@ header{
 }
 
 
-// for patient show.html.erb
+// patient show.html.erb
 .newpt{
   font-size: 18px;
 }
@@ -57,7 +57,7 @@ header{
 }
 
 
-// for log out page/landing page - landing html erb
+// log out page/landing page - landing html erb
 .panel-heading{
   width: 400px;
   font-size: 30px;
@@ -66,4 +66,27 @@ header{
 .panel-default{
   width: 400px;
   font-size: 20px;
+}
+
+// practitioners landing html erb
+.landing_logout {
+  background: url("Comfort.jpg");
+  image-resolution: 0.5;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  color: #51278e;
+}
+
+.final_logout {
+  box-shadow: 5px 7px #888888;
+  background-color: white;
+  color: #4d098a;
+  opacity: 0.82;
+  border: 4px solid rgba(222, 255, 255, 0.3);
+  border-radius: 20px;
+  width: 1000px;
+  margin: 100px auto;
+  padding-top: 80px;
+  padding-bottom: 100px;
 }

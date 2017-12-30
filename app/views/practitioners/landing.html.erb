@@ -1,26 +1,31 @@
-<h1><center><font size="10" face="georgia">Mini Mental State Exam (MMSE)</center></font></h1>
+<div class="landing_logout">
+  <h1><center><font size="10" face="georgia">Mini Mental State Exam (MMSE)</center></font></h1>
 
-<h2>Patient Results</h2>
+    <div class="final_logout">
+      <h2>Patient Results</h2>
 
-<% @patient.patient_scores.each do |ps| %>
-  <h1>Score: <%= ps.total%></h1>
-<% end %>
-<br>
+        <% @patient.patient_scores.each do |ps| %>
+          <h1>Score: <%= ps.total%></h1>
+        <% end %>
+        <br>
 
-<div class="panel panel-default">
-  <div class="panel-heading">Score Key:</div>
-  <div class="panel-body">
-    <p>24-30 Normal Range</p>
-    <p>18-23 Moderate Cognitive Impairment</p>
-    <p>0-17 Marked Cognitive Impairment</p>
-  </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">Score Key:
+          </div>
+          <div class="panel-body">
+            <p>24-30 Normal Range</p>
+            <p>18-23 Moderate Cognitive Impairment</p>
+            <p>0-17 Marked Cognitive Impairment</p>
+          </div>
+        </div>
+
+
+         <p>
+          <a href='mailto:mariaviz2015@gmail.com?subject=Mini &nbsp;Mental&nbsp; Test&nbsp;Results'><font size="5">Email Results to Patient</font></a>
+        </p>
+        <br>
+
+
+        <h3>Thank you for visiting</h3>
+    </div>
 </div>
-
-
- <p>
-  <a href='mailto:mariaviz2015@gmail.com?subject=Mini &nbsp;Mental&nbsp; Test&nbsp;Results'><font size="5">Email Results to Patient</font></a>
-</p>
-<br>
-
-
-<h3>Thank you for visiting</h3>
