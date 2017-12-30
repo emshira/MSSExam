@@ -1,33 +1,33 @@
 <div class="landing_logout">
   <h1 class="new-landing-page-title">Mini Mental State Exam (MMSE)</h1>
 
-    <div class="final_logout">
-      <h2>Patient Results</h2>
+  <div class="final_logout">
+    <h2>Patient Results</h2>
 
-        <div class="final-score">
-        <% @patient.patient_scores.each do |ps| %>
-          <h3>Score: <%= ps.total%></h3>
-        <% end %>
-        </div>
-        <br>
-
-        <div class="panel panel-default">
-          <div class="panel-heading">Score Key:
-          </div>
-          <div class="panel-body">
-            <p>24-30 Normal Range</p>
-            <p>18-23 Moderate Cognitive Impairment</p>
-            <p>0-17 Marked Cognitive Impairment</p>
-          </div>
-        </div>
-
-
-         <p>
-          <a href='mailto:mariaviz2015@gmail.com?subject=Mini &nbsp;Mental&nbsp; Test&nbsp;Results'><font size="5">Email Results to Patient</font></a>
-        </p>
-        <br>
-
-
-        <h3>Thank you for visiting</h3>
+    <div class="final-score">
+      <% @patient.patient_scores.each do |ps| %>
+      <h3>Score: <%= ps.total%></h3>
+      <% end %>
     </div>
+    <br>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">Score Key:
+      </div>
+      <div class="panel-body">
+        <p>24-30 Normal Range</p>
+        <p>18-23 Moderate Cognitive Impairment</p>
+        <p>0-17 Marked Cognitive Impairment</p>
+      </div>
+    </div>
+
+
+    <p>
+      <a href='mailto:mariaviz2015@gmail.com?subject=Mini &nbsp;Mental&nbsp; Test&nbsp;Results'><font size="5">Email Results to Patient</font></a>
+    </p>
+    <br>
+
+
+    <h3>Thank you for visiting</h3>
+  </div>
 </div>
