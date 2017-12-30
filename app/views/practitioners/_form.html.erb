@@ -1,4 +1,5 @@
-<%= form_with(model: practitioner, local: true) do |f| %>
+<div class="new-account-container">
+<%= form_with(model: practitioner, local: true, class: "create-acct") do |f| %>
 <% if practitioner.errors.any? %>
 <div id="error_explanation">
   <h2><%= pluralize(practitioner.errors.count, "error") %> prohibited this practitioner from being saved:</h2>
@@ -42,6 +43,7 @@
 </div>
 
 <div class="actions">
-  <%= f.submit "Save" %>
+  <%= f.submit "Save", class: 'btn btn-success btn-lg'%>
+</div>
 </div>
 <% end %>

@@ -1,12 +1,14 @@
 <div class="landing_logout">
-  <h1><center><font size="10" face="georgia">Mini Mental State Exam (MMSE)</center></font></h1>
+  <h1 class="new-landing-page-title">Mini Mental State Exam (MMSE)</h1>
 
     <div class="final_logout">
       <h2>Patient Results</h2>
 
+        <div class="final-score">
         <% @patient.patient_scores.each do |ps| %>
-          <h1>Score: <%= ps.total%></h1>
+          <h3>Score: <%= ps.total%></h3>
         <% end %>
+        </div>
         <br>
 
         <div class="panel panel-default">

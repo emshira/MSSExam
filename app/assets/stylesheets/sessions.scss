@@ -56,8 +56,34 @@ header{
   margin-bottom: 20px;
 }
 
+//patient new.html.erb
+.new-patient-container{
+  padding-right: 230px;
+  padding-left: 230px;
+  margin-bottom: 30px;
+}
 
-// log out page/landing page - landing html erb
+//practitioners form.html.erb
+.new-account-title{
+  text-align: center;
+  font-family: georgia;
+  font-size: 3em;
+}
+
+.new-account-container{
+  padding-right: 230px;
+  padding-left: 230px;
+  margin-bottom: 30px;
+  font-size: 18px;
+}
+
+.create-acct .field{
+  display: grid;
+  grid-template-columns: 250px auto;
+  margin-bottom: 20px;
+}
+
+// landing.html.erb
 .panel-heading{
   width: 400px;
   font-size: 30px;
@@ -68,14 +94,20 @@ header{
   font-size: 20px;
 }
 
-// practitioners landing html erb
+// practitioners landing.html.erb
+.new-landing-page-title{
+  text-align: center;
+  font-family: georgia;
+  font-size: 3em;
+}
+
 .landing_logout {
   background: url("Comfort.jpg");
-  image-resolution: 0.5;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  color: #51278e;
+  height: 100%;
+  width: 100%
 }
 
 .final_logout {
