@@ -1,8 +1,31 @@
 <div class="practitioner-home">
 
-  <div class="user-input">
 
-    <% if !!current_practitioner %>
+  <% if !!current_practitioner %>
+  <br>
+  <br>
+  <div class='wrap'>
+
+    <div class = "blocks">
+      <%= link_to 'https://www.ncbi.nlm.nih.gov/pubmed', target: :_blank do %>
+      <%= image_tag "PubMed_logo.png", height: '140', width: '350' %>
+      <% end %>
+    </div>
+
+    <div class = "blocks">
+      <%= link_to 'https://online.epocrates.com/rxmain', target: :_blank do %>
+      <%= image_tag "Epocrates_logo.png", height: '140', width: '420' %>
+      <% end %>
+    </div>
+
+    <div class = "blocks">
+      <%= link_to 'http://patients.aan.com/findaneurologist/', target: :_blank do %>
+      <%= image_tag "AAN_logo.jpg", height: '140', width: '350' %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="user-input">
 
     <h1 class="title">Mini Mental State Exam</h1>
 
@@ -11,7 +34,7 @@
         <div class="select-patient">
           <%= link_to 'Select Patient', patients_path %>
         </div>
-
+        |
         <%= @testing %>
 
         <div class="create-patient">
@@ -20,27 +43,27 @@
       </div>
     </div>
     <% else %>
-
-    <h1 class="title">Mini Mental State Exam</h1>
-    <br>
-    <br>
-    <h3>Practitioner Log in</h3>
-    <%= form_tag '/login' do %>
-    <p>
-      <%= label_tag "Practitioner Email" %>
-      <%= text_field_tag "practitioner[email]" %>
-    </p>
-    <p>
-      <%= label_tag "Practitioner Password" %>
-      <%= password_field_tag "practitioner[password]" %>
-    </p>
-    <p>
-      <%= submit_tag "Log in" %>
-      <p><%= link_to 'Forgot password', new_password_reset_path %>
-      </p>
-    </p>
-    <% end %>
-
-    <% end %>
+    <div class="user-login-input">
+      <h1 class="title">Mini Mental State Exam</h1>
+      <div class="login-practitioner-page">
+        <h3 class="">Practitioner Log in</h3>
+        <br>
+        <%= form_tag '/login' do %>
+        <p>
+          <%= label_tag "Practitioner Email" %>
+          <%= text_field_tag "practitioner[email]", '', placeholder: "Practitioner Email" %>
+        </p>
+        <p>
+          <%=label_tag "Practitioner Password" %>
+          <%= password_field_tag "practitioner[password]", '', placeholder: "Password" %>
+        </p>
+        <p>
+          <%= submit_tag "Log in", class:'btn btn-success btn-lg' %>
+          <p><%= link_to 'Forgot password', new_password_reset_path %>
+          </p>
+        </p>
+        <% end %>
+        <% end %>
+      </div>
+    </div>
   </div>
-</div>
