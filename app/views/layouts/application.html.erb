@@ -21,7 +21,7 @@
 </head>
 <body>
   <header class="nav fixed">
-    <div class="navbar" style="background-color: #ABC3CE">
+    <div class="navbar" style="background-color: #ABC3CE; margin: 0;">
       <div class="nav-active">
         <% if current_practitioner  %>
         Signed in as: <%= current_practitioner.email %> | <%= link_to "Logout", '/logout' %>
@@ -41,6 +41,7 @@
       </div>
     </div>
   </header>
+  <div class="height-100"></div>
 
   <%= yield %>
 

@@ -15,53 +15,53 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :first_name %>
     <%= form.text_field :first_name, id: :patient_first_name, class: "form-control"%>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :last_name %>
     <%= form.text_field :last_name, id: :patient_last_name, class: 'form-control'%>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :date_of_birth %>
     <%= form.date_field :date_of_birth, id: :patient_date_of_birth, class: 'form-control'%>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :gender %>
-    <%= form.select :gender, %w{Male Female}, :prompt => 'Select', required: true, placeholder: 'Gender', class: 'form-control' %>
+    <%= form.select :gender, %w{Male Female}, {:include_blank => "Select Gender"}, {:prompt => 'Select', required: true, placeholder: 'Gender', class: 'form-control', style: 'height: 46px;'} %>
     <!-- <%= form.text_field :gender, id: :patient_gender, class: 'form-control'%> -->
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :reason_for_visit %>
-    <%= form.text_area :reason_for_visit, id: :patient_reason_for_visit, class: 'form-control' %>
+    <%= form.text_area(:reason_for_visit, rows: 4, class: 'form-control') %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :insurance %>
     <%= form.text_field :insurance, id: :patient_insurance, class: 'form-control'%>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :policy_number %>
     <%= form.text_field :policy_number, id: :patient_policy_number, class: 'form-control'%>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :telephone %>
     <%= form.telephone_field :telephone, id: :patient_telephone, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :address %>
     <%= form.text_field :address, id: :patient_address, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :email %>
     <%= form.text_field :email, id: :patient_email, class: 'form-control' %>
   </div>
@@ -74,3 +74,5 @@
   </div>
 </div>
 <% end %>
+
+<div class="height-100"></div>

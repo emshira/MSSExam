@@ -107,7 +107,8 @@ header{
   background-attachment: fixed;
   background-size: cover;
   height: 100%;
-  width: 100%
+  width: 100%;
+  min-height: 100vh;
 }
 
 .final_logout {
