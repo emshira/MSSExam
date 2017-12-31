@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
 
   def new
-
+    @practitioner = Practitioner.new
   end
 
   def create
