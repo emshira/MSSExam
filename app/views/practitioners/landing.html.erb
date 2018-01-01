@@ -2,14 +2,14 @@
   <h1 class="new-landing-page-title">Mini Mental State Exam (MMSE)</h1>
 
   <div class="final_logout">
-    <h2>Patient Results</h2>
+    <h2>Patient Results: <%=@patient.last_name %>, <%= @patient.first_name %></h2>
 
     <div class="final-score">
-      <% @patient.patient_scores.each do |ps| %>
-      <h3>Score: <%= ps.total%></h3>
-      <% end %>
+      <%= hidden_field_tag :final_score, @patient.patient_scores.map{|ps| { name: ps.created_at.strftime("%D"),y: ps.total}}.to_json %>
     </div>
     <br>
+
+    <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 
     <div class="panel panel-default">
       <div class="panel-heading">Score Key:
@@ -26,6 +26,11 @@
       <a href='mailto:mariaviz2015@gmail.com?subject=Mini &nbsp;Mental&nbsp; Test&nbsp;Results'><font size="5">Email Results to Patient</font></a>
     </p>
     <br>
+
+    <div class="landing-button">
+      <%= link_to 'Back', new_patient_question_path(@patient.id), class: 'btn btn-success btn-lg' %>
+    </div>
+
 
 
     <h3>Thank you for visiting</h3>

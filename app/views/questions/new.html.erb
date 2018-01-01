@@ -1,6 +1,7 @@
 <h1><center><font size="10" face="georgia">Mini Mental State Exam (MMSE)</center></font></h1>
 <br>
 <br>
+
 <%= form_with(url: "/landed?patient_id=#{@patient_id}", class: "landed-form", method: 'POST') do |f| %>
   <% @questions.group_by(&:subject).each do |grouped_question |%>
 
@@ -118,32 +119,16 @@
 
       <hr>
       <% end %>
-  <div class="form-group col-xs-12">
-    <%= f.hidden_field :patient_id, value: params[:id] %>
-    <%= f.submit "Submit" , class: 'btn btn-success btn-lg'%>
-    <br>
-    <br>
-    <%= link_to 'Back', patients_path, class: 'btn btn-success btn-lg'%>
 
-  </div>
-  <div class="form-group col-xs-12">
 
-  </div>
+    <br>
+    <div class="questions-button">
+      <%= f.hidden_field :patient_id, value: params[:id] %>
+      <%= f.submit "Submit" , class: 'btn btn-success btn-lg'%>
+      &nbsp;&nbsp;
+      <%= link_to 'Back', patients_path, class: 'btn btn-success btn-lg'%>
+
+      <%= link_to 'Forward', landing_path(patient_id: @patient_id), class: 'btn btn-success btn-lg  pull-right' %>
+    </div>
+
 <% end %>
-
-
-<!-- <form action="/landing" >
-  <button type="submit">Button</button>
-</form> -->
-<!-- <input class="btn btn-primary" type="submit" value="Submit"> -->
-
-
-<%# form_with(url: "/landed") do |f| %>
-  <%# f.select "q[]question", [3,4,5]%>
-  <%#f.select "q[]question2", [3,4,5]%>
-<%# f.submit "Submit" %>
-
-
-<!-- <form action="example.com" >
-  <button type="submit">Button</button>
-</form>  -->

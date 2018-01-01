@@ -29,14 +29,33 @@ header{
 
 }
 
+//patient show
+.patient-summary{
+  padding-left: 230px;
+  font-size: 18px;
+}
+
+.patient-summary-button{
+  padding-right: 250px; 
+}
+
+
+
 // questions/new
 .landed-form{
   font-size: 18px;
   line-height: 180%;
+  padding-left: 230px;
 }
 
 .btn-primary.btn-lg-q{
   border-radius: 20px;
+}
+
+.questions-button{
+  padding-left: 20px;
+  padding-right: 250px;
+
 }
 
 

@@ -1,5 +1,5 @@
 <h1><center><font size="10" face="georgia">Patient Summary</center></font></h1>
-
+<div class="patient-summary">
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -51,8 +51,13 @@
   <strong>Email:</strong>
   <%= @patient.email %>
 </p>
-
-<%= link_to 'Edit', edit_patient_path(@patient) %> |
-<%= link_to 'Back', patients_path %>
 <br>
-<%= link_to 'Delete', patient_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <div class="patient-summary-button">
+    <%= link_to 'Edit', edit_patient_path(@patient), class: 'btn btn-success btn-lg' %>
+   &nbsp;&nbsp;
+    <%= link_to 'Back', patients_path, class: 'btn btn-success btn-lg' %>
+
+    <%= link_to 'Delete', patient_path, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-success btn-lg pull-right'%>
+  <div>
+
+</div>
