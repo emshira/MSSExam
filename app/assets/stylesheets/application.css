@@ -37,7 +37,7 @@
 
 
 .logged-in {
-  background: url("/assets/Epocrates_logo.pn");
+  background: url("keyboard_doc.jpg");
   image-resolution: 0.5;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -82,7 +82,7 @@
 /*** Sessions-New page Practitioner homepage background settings ***/
 
 .practitioner-home {
-  background: url("/assets/Epocrates_logo.png");
+  background: url("keyboard_doc.jpg");
   image-resolution: 0.5;
   height:100%;
   width:100%;
