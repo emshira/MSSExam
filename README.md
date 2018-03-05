@@ -1,30 +1,34 @@
-# README
+# MMSE (Mini Mental State Exam)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+An assessment tool used by physicians to assess patent's cognitive function.
+Includes user Authentication and reset password; automatically calculate score and inserts into a bar graph.
+----------------------
+Technologies: Ruby, Ruby on Rails, HTML, CSS, JS, Bootstrap, Git, Heroku, and Created Seed files, PostgreSQL database, Bcrypt Authentication.
 
-Things you may want to cover:
+----------------------
 
-* Ruby version
+* Ruby version: 2.4.2
 
-* System dependencies
+* Rails version: 5.14
 
-* Configuration
 -------------------------
 
-### Database creation:
-#### To update the Database please do the following:
+
+# To update the Database in local host:
 - rake db:migrate
 - rake db:questions_seed
 - rake db:subjects_seed
+
+# To update the Database in Heroku:
+- heroku run rake db:migrate
+- heroku run rake db:questions_seed
+- heroku run rake db:subjects_seed
 -------------------------
 
-* Database initialization
+* Deployment instructions:
 
-* How to run the test suite
+Local host for Ruby on Rails: http://localhost:3000/
 
-* Services (job queues, cache servers, search engines, etc.)
+OR
 
-* Deployment instructions
-
-* ...
+https://pure-chamber-10247.herokuapp.com
